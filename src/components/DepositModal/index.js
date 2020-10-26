@@ -60,7 +60,13 @@ export default function DepositModal({
 
   return (
     <div>
-      <Button type='primary' shape='round' size='large' onClick={() => setModalDeposit(true)}>
+      <Button
+        className='bt-width'
+        type='primary'
+        shape='round'
+        size='large'
+        onClick={() => setModalDeposit(true)}
+      >
         Deposit
       </Button>
       <Modal

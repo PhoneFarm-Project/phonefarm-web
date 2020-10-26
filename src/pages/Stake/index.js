@@ -59,7 +59,7 @@ function Stake() {
       <ButtonBack url='/home?preset=moveToRightFromLeft' />
       <div className='boxStake'>
         <h4>
-          ( <b>100</b> IPH / block )
+          ( <b>100</b> IPHONE / block )
         </h4>
         <div className='arrow-top'>
           <div className='chevron'></div>

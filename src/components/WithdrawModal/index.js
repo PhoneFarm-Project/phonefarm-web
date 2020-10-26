@@ -23,7 +23,7 @@ export default function WithdrawModal({ listTokenStake, poolSelected, marks, loa
     }
   };
 
-  const handleCancelWitdraw = (e) => {
+  const handleCancelWithdraw = (e) => {
     setModalWithdraw(false);
   };
 
@@ -45,7 +45,13 @@ export default function WithdrawModal({ listTokenStake, poolSelected, marks, loa
 
   return (
     <div>
-      <Button type='primary' shape='round' size='large' onClick={() => setModalWithdraw(true)}>
+      <Button
+        className='bt-width'
+        type='primary'
+        shape='round'
+        size='large'
+        onClick={() => setModalWithdraw(true)}
+      >
         Withdraw
       </Button>
       <Modal
@@ -55,7 +61,7 @@ export default function WithdrawModal({ listTokenStake, poolSelected, marks, loa
           </h2>,
         ]}
         visible={modalWithdraw}
-        onCancel={() => handleCancelWitdraw()}
+        onCancel={() => handleCancelWithdraw()}
         footer={[
           listTokenStake[poolSelected] > 0.1 ? (
             <Button
@@ -95,7 +101,7 @@ export default function WithdrawModal({ listTokenStake, poolSelected, marks, loa
           </div>
         </div>
         <div className='w_100 text_left'>
-          <p>Balance : {listTokenStake[poolSelected]} IPH</p>
+          <p>Balance : {listTokenStake[poolSelected]} IPHONE</p>
         </div>
       </Modal>
     </div>
