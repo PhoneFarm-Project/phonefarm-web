@@ -1,0 +1,40 @@
+$height: 30vh;
+.mgb_15 {
+  margin-bottom: 5vh !important;
+}
+
+.ip_product_image {
+  height: $height;
+  width: $height * 0.7;
+  padding: 2vh;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.head_font {
+  font-size: 8vw;
+}
+
+.product_name_font {
+  font-size: 7vw;
+}
+
+.price_font {
+  font-size: 6vw;
+}
+
+.product_bt {
+  width: 50%;
+  border-radius: 20px;
+}
+
+.btn-using{
+  color: #40a9ff;
+  background: #fff;
+  border-color: #40a9ff;
+}

@@ -1,0 +1,20 @@
+.box-btn-back {
+  height: 5vh;
+  width: 100%;
+  text-align: start;
+  .link-btn-back {
+    position: fixed;
+    top: 5vh;
+    left: 0;
+    .iconLeftOutlined {
+      font-size: 22.5px;
+    }
+    .btn-back {
+      border-radius: 5px;
+      padding: 5px;
+    }
+    .text-btn-back {
+      margin-left: 0;
+    }
+  }
+}

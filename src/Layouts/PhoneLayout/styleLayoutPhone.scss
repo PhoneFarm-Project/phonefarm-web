@@ -1,0 +1,129 @@
+$phone-heght: 100vh;
+
+.iphone3{
+    .content_box {
+        .default_layout {
+            width: ($phone-heght/19.5) * 8.6;
+            height: $phone-heght * 0.665;
+        }
+        .style_iframe{
+            width: ($phone-heght/19.5) * 8.6;
+            height: $phone-heght * 0.665;
+            top: 16.4vh;
+        }
+        .lock {
+            height: 66%;
+        }
+    }
+}
+
+.iphone4{
+    .content_box {
+        .default_layout {
+            width: ($phone-heght/19.5) * 8.7;
+            height: $phone-heght * 0.65;
+        }
+        .style_iframe{
+            width: ($phone-heght/19.5) * 8.7;
+            height: $phone-heght * 0.636;
+            top: 18.4vh;
+        }
+        .lock {
+            height: 66%;
+        }
+    }
+}
+
+.iphone5{
+    .content_box {
+        .default_layout {
+            position: absolute;
+            width: ($phone-heght/19.5) * 8.3;
+            height: $phone-heght * 0.7;
+            left: 5.1vh;
+        }
+        .style_iframe{
+            width: ($phone-heght/19.5) * 8.2;
+            height: $phone-heght * 0.7;
+            left: 5.4vh;
+        }
+        .lock {
+            height: 66%;
+        }
+    }
+}
+
+.iphone5s{
+    .content_box {
+        .default_layout {
+           
+        }
+        .style_iframe{
+            width: ($phone-heght/19.5) * 8.6;
+            height: $phone-heght * 0.636;
+            top: 18.4vh;
+            left: 2.8vw;
+        }
+        .lock {
+            height: 66%;
+        }
+    }
+}
+
+.iphone8{
+    .content_box {
+        .default_layout {
+            width: ($phone-heght/19.5) * 8.8;
+            height: $phone-heght * 0.75;
+            // border-radius: $phone-heght/18.8;
+        }
+        .style_iframe{
+            width: ($phone-heght/19.5) * 8.8;
+            height: $phone-heght * 0.75;
+            top: 11.8vh;
+        }
+        .lock {
+            height: 66%;
+        }
+    }
+}
+
+.iphoneX {
+    .content_box {
+        .default_layout {
+           
+        }
+        .style_iframe{
+            width: ($phone-heght/19.5) * 8.6;
+            height: $phone-heght * 0.636;
+            top: 18.4vh;
+            left: 2.8vw;
+        }
+        .lock {
+            height: 80%;
+            .screen_size{
+                height: $phone-heght * 0.95;
+                width: ($phone-heght/19.5) * 9.6;
+            }
+        }
+    }
+}
+
+
+.iphone11{
+    .content_box {
+        .default_layout {
+           
+        }
+        .style_iframe{
+            width: ($phone-heght/19.5) * 8.6;
+            height: $phone-heght * 0.636;
+            border-radius: $phone-heght/18.8;
+            top: 18.4vh;
+            left: 2.8vw;
+        }
+        .lock {
+            height: 66%;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@import '~antd/dist/antd.css';
+
+.App {
+  text-align: center;
+  height: 100vh;
+  background: #f0f2f5;
+}
+
+.ip_font {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
+    'Lucida Grande', sans-serif;
+}
+
+.ant-modal-content {
+  border-radius: 10px;
+}
+
+.ant-modal-content > .ant-modal-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.spin-center-screen {
+  height: 70vh !important;
+  max-height: 100vh !important;
+}
+
+.stye-empty-box {
+  margin-top: 30vh;
+}
+
+.ant-layout {
+  background: none;
+}

@@ -1,0 +1,42 @@
+.buy-phone {
+  height: 85vh !important;
+  display: flex;
+  justify-content: center;
+}
+.iph_input {
+  width: 80%;
+  border-radius: 3vh;
+  text-align: center;
+  margin: auto;
+}
+
+.w_100 {
+  width: 100%;
+  margin: 5vw 0vw;
+}
+
+.text_left {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin: auto;
+}
+
+.buy_bt {
+  background-color: rgb(2, 192, 118);
+  border-color: rgb(2, 192, 118);
+  &:hover {
+    background-color: rgb(2, 192, 90);
+    border-color: rgb(2, 192, 118);
+    color: black;
+  }
+  &:focus {
+    background-color: rgb(2, 192, 118);
+    border-color: rgb(2, 192, 118);
+    color: black;
+  }
+}
+
+.scroll_able {
+  overflow: overlay;
+}

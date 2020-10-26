@@ -1,0 +1,41 @@
+$phone-heght: 99vh;
+$screen-heght: $phone-heght * 0.927;
+$screen-width: ($phone-heght/19.5) * 9;
+$screen-radius: $phone-heght/18.8;
+
+.screen_size {
+  height: $screen-heght;
+  width: $screen-width;
+  border-radius: $screen-radius;
+  cursor: pointer;
+}
+
+.lock_screen {
+  background-image: url('../../assets/phoneCases/iphone11/iphonewallpaper.jpg');
+}
+
+.fog {
+  background-color: white;
+  opacity: 0.45;
+}
+
+.lock_area {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $screen-width;
+  height: $screen-heght/2.5;
+  flex-direction: column;
+}
+
+.icon {
+  width: $screen-width/8;
+  height: $screen-width/8;
+}
+
+.clock_font {
+  color: white;
+  font-size: $screen-heght/14;
+}
