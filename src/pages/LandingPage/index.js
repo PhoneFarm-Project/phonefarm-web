@@ -116,7 +116,7 @@ function LandingPage() {
                 <div className='feature-icon' style={{ backgroundImage: `url(${serviceShape3})` }}>
                   <MobileOutlined />
                 </div>
-                <h3 className='feature-title'>Buy IPHONE</h3>
+                <h3 className='feature-title'>Mint NFTS</h3>
                 <p>
                   With iPhone token, we can use it to mint new iPhone NFT cards, which can be used
                   to change your phone looks on home page, and also you can list those on NTF
