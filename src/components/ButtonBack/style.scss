@@ -1,10 +1,14 @@
 .box-btn-back {
-  height: 5vh;
+  height: 4vh;
   width: 100%;
+  z-index: 1000;
+  background-color: #f0f2f5;
+  position: fixed;
+  left: 0;
+  top: 0;
   text-align: start;
   .link-btn-back {
     position: fixed;
-    top: 5vh;
     left: 0;
     .iconLeftOutlined {
       font-size: 22.5px;
@@ -15,6 +19,7 @@
     }
     .text-btn-back {
       margin-left: 0;
+      font-weight: bold;
     }
   }
 }

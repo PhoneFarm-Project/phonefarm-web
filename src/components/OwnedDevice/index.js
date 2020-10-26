@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Row, Col } from 'antd';
 import getIphoneLayout from 'utils/getIphoneLayout';
 import './style.scss';
+import { parseBalance } from 'utils/helper';
 
 export default function OwnedDevice({ iPhone, loading, preview, currentLayout }) {
   return (
@@ -14,7 +15,12 @@ export default function OwnedDevice({ iPhone, loading, preview, currentLayout })
         />
       </Col>
       <Col className='center' span={16}>
-        <p className='ip_font product_name_font'>{iPhone.name}</p>
+        <p className='ip_font price_font'>
+          <strong>{parseBalance(iPhone.price)}</strong> iPhone
+        </p>
+        <p className='ip_font product_name_font'>
+          {iPhone.model} {iPhone.color}
+        </p>
         {currentLayout.model === iPhone.model && currentLayout.color === iPhone.color ? (
           <Button className='product_bt ip_font btn-using'>Using</Button>
         ) : (

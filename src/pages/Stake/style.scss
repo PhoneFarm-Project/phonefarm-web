@@ -10,8 +10,11 @@ $base: 0.6rem;
 }
 
 .styleStake {
+  &::-webkit-scrollbar {
+    width: 0 !important
+  }
   position: relative;
-  padding: 5vh 0.5em 1em 0.5em;
+  padding: 0vh 0.5em 1em 0.5em;
   height: 100vh;
   background: #f0f2f5;
   .boxStake {
