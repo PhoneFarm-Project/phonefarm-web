@@ -7,7 +7,7 @@ $colors: (
   'info': #2786fb,
 );
 
-$phone-heght: 99vh;
+$phone-height: 99vh;
 
 *,
 *::after,
@@ -61,14 +61,14 @@ button:active {
 }
 
 .phone_size {
-  width: ($phone-heght/19.5) * 10.3;
-  height: $phone-heght;
+  width: ($phone-height/19.5) * 10.3;
+  height: $phone-height;
 }
 
 .phone_header {
   position: absolute;
-  width: ($phone-heght/19.5) * 10.3;
-  height: $phone-heght;
+  width: ($phone-height/19.5) * 10.3;
+  height: $phone-height;
   top: 0px;
   z-index: 6;
 }
@@ -90,8 +90,8 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ($phone-heght/19.5) * 10.3;
-  height: $phone-heght;
+  width: ($phone-height/19.5) * 10.3;
+  height: $phone-height;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -99,8 +99,8 @@ button:active {
 
 .style_iframe {
   position: absolute;
-  width: ($phone-heght/19.5) * 8.9;
-  height: $phone-heght * 0.927;
+  width: ($phone-height/19.5) * 8.9;
+  height: $phone-height * 0.927;
   margin: 0 auto;
   border: 0px;
 }

@@ -20,7 +20,7 @@ export default function IphoneCollection() {
 
   const preview = (phone) => {
     let model = phone.model;
-    let color = phone.color.replaceAll('-', '');
+    let color = phone.color.replace(/-/g, '');
     localStorage.setItem('device', JSON.stringify({ brand: 'iphone', model, color }));
     window.parent.postMessage('ChangeLayout');
     setCurrentLayout({ brand: 'iphone', model, color });

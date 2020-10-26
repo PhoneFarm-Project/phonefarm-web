@@ -1,7 +1,7 @@
-$phone-heght: 99vh;
-$screen-heght: $phone-heght * 0.927;
-$screen-width: ($phone-heght/19.5) * 9;
-$screen-radius: $phone-heght/18.8;
+$phone-height: 99vh;
+$screen-heght: $phone-height * 0.94;
+$screen-width: ($phone-height/19.5) * 9;
+$screen-radius: $phone-height/18.8;
 
 .screen_size {
   height: $screen-heght;

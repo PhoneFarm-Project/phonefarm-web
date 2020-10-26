@@ -15,7 +15,7 @@ $base: 0.6rem;
   height: 100vh;
   background: #f0f2f5;
   .boxStake {
-    padding-top: 4vh;
+    padding: 4vh 2vh;
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -99,4 +99,8 @@ $base: 0.6rem;
 
 .text-center {
   text-align: center !important;
+}
+
+.bt-width {
+  width: 80% !important;
 }
