@@ -211,11 +211,10 @@ export const setPoolInfo = () => async (dispatch, getState) => {
 
 export const depositToken = (pid, amount) => async (dispatch, getState) => {
   dispatch(setLoading(true));
-  const { walletAddress, factoryInstance } = getState();
+  const { walletAddress, factoryInstance, web3 } = getState();
+  const weiValue = web3.utils.toWei(amount.toString(), 'ether');
   try {
-    await factoryInstance.methods
-      .deposit(pid, (amount * 1e18).toString())
-      .send({ from: walletAddress });
+    await factoryInstance.methods.deposit(pid, weiValue).send({ from: walletAddress });
     dispatch(setTokenAllowance());
     dispatch(setTokenStake());
     dispatch(setLoading(false));
@@ -228,11 +227,8 @@ export const depositToken = (pid, amount) => async (dispatch, getState) => {
 };
 
 export const withdrawToken = (pid, amount) => async (dispatch, getState) => {
-  let state = getState();
+  let { walletAddress, factoryInstance, web3 } = getState();
   dispatch(setLoading(true));
-  const walletAddress = state.walletAddress;
-  const factoryInstance = state.factoryInstance;
-  const web3 = state.web3;
   const weiValue = web3.utils.toWei(amount.toString(), 'ether');
   try {
     await factoryInstance.methods.withdraw(pid, weiValue).send({ from: walletAddress });
