@@ -61,13 +61,13 @@ function LandingPage() {
                   date.
                 </p>
                 <div className='space-30 hidden-xs'></div>
-                <a className='btn-icon wow fadeIn' href='#!' onClick={(e) => e.preventDefault()}>
+                <a className='btn-icon wow fadeIn' href='/phone'>
                   <span className='btn-content'>
                     <span className='icon'>
                       <img src={logoIcon} alt='app-store' />
                     </span>
-                    <small>Get airdrop tokens</small>
-                    <strong>Coming Soon</strong>
+                    <small>Get your iPhone</small>
+                    <strong>Open App !</strong>
                   </span>
                 </a>
               </div>
