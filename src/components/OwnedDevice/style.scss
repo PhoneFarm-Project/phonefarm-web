@@ -21,11 +21,14 @@ $height: 30vh;
 }
 
 .product_name_font {
-  font-size: 7vw;
+  font-size: 4.5vw;
 }
 
 .price_font {
-  font-size: 6vw;
+  strong {
+    font-size: 6vw;
+  }
+  font-size: 4vw;
 }
 
 .product_bt {

@@ -505,68 +505,68 @@ const iphoneInfo = {
   },
   XR: {
     Black: {
-      style: 'iphoneX',
+      style: 'iphoneXR',
       img: iPhoneXRBlackImg,
       layout: iPhoneXRBlack,
     },
     Blue: {
-      style: 'iphoneX',
+      style: 'iphoneXR',
       img: iPhoneXRBlueImg,
       layout: iPhoneXRBlue,
       codeColor: '#1890ff',
     },
     Coral: {
-      style: 'iphoneX',
+      style: 'iphoneXR',
       img: iPhoneXRCoralImg,
       layout: iPhoneXRCoral,
     },
     Red: {
-      style: 'iphoneX',
+      style: 'iphoneXR',
       img: iPhoneXRRedImg,
       layout: iPhoneXRRed,
     },
     White: {
-      style: 'iphoneX',
+      style: 'iphoneXR',
       img: iPhoneXRWhiteImg,
       layout: iPhoneXRWhite,
     },
     Yellow: {
-      style: 'iphoneX',
+      style: 'iphoneXR',
       img: iPhoneXRYellowImg,
       layout: iPhoneXRYellow,
     },
   },
   XS: {
     Gold: {
-      style: 'iphoneX',
+      style: 'iphoneXS',
       img: iPhoneXSGoldImg,
       layout: iPhoneXSGold,
     },
     SpaceGray: {
-      style: 'iphoneX',
+      style: 'iphoneXS',
       img: iPhoneXSSpaceGrayImg,
       layout: iPhoneXSSpaceGray,
     },
     Silver: {
-      style: 'iphoneX',
+      style: 'iphoneXS',
       img: iPhoneXSSilverImg,
       layout: iPhoneXSSilver,
     },
   },
   XSMax: {
     Gold: {
-      style: 'iphoneX',
+      style: 'iphoneXS',
       img: iPhoneXSMaxGoldImg,
       layout: iPhoneXSMaxGold,
     },
     SpaceGray: {
-      style: 'iphoneX',
+      style: 'iphoneXS',
       img: iPhoneXSMaxSpaceGrayImg,
       layout: iPhoneXSMaxSpaceGray,
       codeColor: '#343d52',
     },
     Silver: {
-      style: 'iphoneX',
+      style: 'iphoneXS',
       img: iPhoneXSMaxSilverImg,
       layout: iPhoneXSMaxSilver,
     },

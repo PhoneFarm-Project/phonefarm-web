@@ -50,7 +50,7 @@ export default function BuyIphone() {
 
   /* eslint-disable react-hooks/exhaustive-deps*/
   useEffect(() => {
-    if (currentPhone) {
+    if (currentPhone && listColorModel.length <= 0) {
       updateCurrent(currentPhone.model);
     }
   }, [currentPhone]);
@@ -83,7 +83,6 @@ export default function BuyIphone() {
   };
 
   const filterOption = (input, option) => {
-    console.log(input, option);
     return option.children[1].toLowerCase().indexOf(input.toLowerCase()) >= 0;
   };
 
