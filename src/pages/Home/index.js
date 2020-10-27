@@ -24,6 +24,7 @@ function Home() {
           >
             <img src={iconStore} alt='icon' />
           </Link>
+          <p className='app-name'>NFT Store</p>
         </div>
         <div className='col-3'>
           <Link
@@ -33,6 +34,7 @@ function Home() {
           >
             <img src={buyToken} alt='icon' />
           </Link>
+          <p className='app-name'>Token Store</p>
         </div>
         <div className='col-3'>
           <Link
@@ -41,6 +43,7 @@ function Home() {
           >
             <img src={iconSettings} alt='icon' />
           </Link>
+          <p className='app-name'>Collection</p>
         </div>
         <div className='col-3'>
           <Link
@@ -50,6 +53,7 @@ function Home() {
           >
             <img src={stake} alt='icon' />
           </Link>
+          <p className='app-name'>Stake</p>
         </div>
       </div>
     </Layout>

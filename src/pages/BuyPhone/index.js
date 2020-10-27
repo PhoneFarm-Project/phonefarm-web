@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Layout, InputNumber, Slider, Button } from 'antd';
 import ButtonBack from 'components/ButtonBack';
 import { buyTokenPhone } from 'store/actions';
+import EthIcon from 'assets/icons/eth-icon.png';
+import PhoneIcon from 'assets/icons/phoneFarm-logo-128.png';
 
 import './style.scss';
 
@@ -52,6 +54,11 @@ export default function BuyPhone() {
     <Layout className='styleStake buy-phone'>
       <ButtonBack url='/home?preset=moveToRightFromLeft' />
       <div className='boxStake'>
+        <p>
+          <img className='token-transfer' src={EthIcon} /> <i className='arrow' />
+          <i className='arrow' />
+          <img className='token-transfer' src={PhoneIcon} />
+        </p>
         <div className='w_100'>
           <InputNumber
             className='iph_input'

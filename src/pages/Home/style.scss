@@ -32,6 +32,11 @@ $phone-height: 99vh;
   animation: zoomin 0.5s;
 }
 
+.app-name {
+  font-size: 0.6em;
+  margin-left: 10%;
+}
+
 @keyframes zoomin {
   0% {
     transform: scale(0.5, 0.5);

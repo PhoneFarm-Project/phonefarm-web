@@ -27,6 +27,9 @@ export default function IphoneProduct({
         {/* <p className='ip_font product_name_font'>
           iPhone {iPhone.model} {iPhone.color}
         </p> */}
+        <p className='quantity'>
+          MINTED: {iPhone.totalSupply} | <b>{iPhone.maxSupply - iPhone.totalSupply} LEFT</b>
+        </p>
         <Row className='box-color'>
           {listColorModel.map((color, index) => {
             return (
@@ -45,7 +48,7 @@ export default function IphoneProduct({
             );
           })}
         </Row>
-        <p className='ip_font price_font'>Price: {iPhone.price / 10 ** 18} IPH</p>
+        <p className='ip_font price_font'>Price: {iPhone.price / 10 ** 18} IPHONE</p>
         {isApproved ? (
           <Button
             className='product_bt ip_font'
@@ -57,7 +60,7 @@ export default function IphoneProduct({
           </Button>
         ) : (
           <Button className='product_bt ip_font' onClick={() => approveIPhone()} loading={loading}>
-            Approve IPH
+            Approve IPHONE
           </Button>
         )}
       </div>
