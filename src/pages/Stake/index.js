@@ -6,6 +6,7 @@ import Pool from 'components/Pool';
 import ButtonBack from 'components/ButtonBack';
 import DepositModal from 'components/DepositModal';
 import WithdrawModal from 'components/WithdrawModal';
+import useInterval from 'utils/useInterval';
 import {
   setTokenAllowance,
   setTokenBal,
@@ -53,6 +54,10 @@ function Stake() {
     setPoolSelected(key);
     dispatch(setTokenStake());
   }
+
+  useInterval(() => {
+    dispatch(setPendingIPhone());
+  }, 15000);
 
   return (
     <Layout className='styleStake stake'>
