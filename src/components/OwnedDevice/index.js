@@ -3,6 +3,7 @@ import { Button, Row, Col } from 'antd';
 import getIphoneLayout from 'utils/getIphoneLayout';
 import './style.scss';
 import { parseBalance } from 'utils/helper';
+import IphoneIcon from 'assets/icons/Iphone-token-128.png';
 
 export default function OwnedDevice({ iPhone, loading, preview, currentLayout }) {
   return (
@@ -16,11 +17,12 @@ export default function OwnedDevice({ iPhone, loading, preview, currentLayout })
       </Col>
       <Col className='center' span={16}>
         <p className='ip_font price_font'>
-          <strong>{parseBalance(iPhone.price)}</strong> iPhone
+          <strong>{parseBalance(iPhone.price)}</strong> <img src={IphoneIcon} alt='token icon' />
         </p>
         <p className='ip_font product_name_font'>
           {iPhone.model} {iPhone.color}
         </p>
+        <p className='ip_font'>{iPhone.balance} Item</p>
         {currentLayout.model === iPhone.model && currentLayout.color === iPhone.color ? (
           <Button className='product_bt ip_font btn-using'>Using</Button>
         ) : (

@@ -27,8 +27,13 @@ $height: 30vh;
 .price_font {
   strong {
     font-size: 6vw;
+    margin-top: 1%;
   }
   font-size: 4vw;
+  img {
+    height: 20px;
+    width: 20;
+  }
 }
 
 .product_bt {
@@ -36,7 +41,7 @@ $height: 30vh;
   border-radius: 20px;
 }
 
-.btn-using{
+.btn-using {
   color: #40a9ff;
   background: #fff;
   border-color: #40a9ff;
