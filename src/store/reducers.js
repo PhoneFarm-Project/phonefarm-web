@@ -19,6 +19,7 @@ const initialState = {
   allDevices: [],
   poolLength: 0,
   pools: [],
+  tokenLocked: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -112,6 +113,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         pools: action.pools,
+      };
+    case actions.SET_TOKEN_LOCKED:
+      return {
+        ...state,
+        tokenLocked: action.tokenLocked,
       };
     default:
       return state;

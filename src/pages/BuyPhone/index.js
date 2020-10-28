@@ -55,9 +55,9 @@ export default function BuyPhone() {
       <ButtonBack url='/home?preset=moveToRightFromLeft' />
       <div className='boxStake'>
         <p>
-          <img className='token-transfer' src={EthIcon} /> <i className='arrow' />
+          <img className='token-transfer' src={EthIcon} alt='eth' /> <i className='arrow' />
           <i className='arrow' />
-          <img className='token-transfer' src={PhoneIcon} />
+          <img className='token-transfer' src={PhoneIcon} alt='phone' />
         </p>
         <div className='w_100'>
           <InputNumber

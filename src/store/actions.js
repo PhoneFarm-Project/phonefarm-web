@@ -372,3 +372,21 @@ export const buyTokenPhone = (amount) => async (dispatch, getState) => {
     return e;
   }
 };
+
+export const SET_TOKEN_LOCKED = 'SET_TOKEN_LOCKED';
+export const setTokenLocked = () => async (dispatch, getState) => {
+  let state = getState();
+  const web3 = state.web3;
+  const pools = state.pools;
+  try {
+    let tokenLocked = [];
+    for (let i = 0; i < pools.length; i++) {
+      let tokenInstance = new web3.eth.Contract(PhoneToken.abi, pools[i].lpToken);
+      let lock = await tokenInstance.methods.balanceOf(factoryAddress).call();
+      tokenLocked.push(parseBalance(lock));
+    }
+    dispatch({ type: SET_TOKEN_LOCKED, tokenLocked });
+  } catch (e) {
+    console.error(e);
+  }
+};
