@@ -7,12 +7,14 @@ import ButtonBack from 'components/ButtonBack';
 import DepositModal from 'components/DepositModal';
 import WithdrawModal from 'components/WithdrawModal';
 import useInterval from 'utils/useInterval';
+import { getAPY } from 'utils/calcApy';
 import {
   setTokenAllowance,
   setTokenBal,
   setPendingIPhone,
   setTokenStake,
   setPoolInfo,
+  setTokenLocked,
 } from 'store/actions';
 
 import './style.scss';
@@ -30,12 +32,14 @@ function Stake() {
   let [statusDeposit, setStatusDeposit] = useState(true);
 
   let [poolSelected, setPoolSelected] = useState(0);
+  let [apy, setApy] = useState(0);
 
   const pendingIPhone = useSelector((state) => state.pendingIPhone);
   const tokenAllowance = useSelector((state) => state.tokenAllowance);
   const listTokenStake = useSelector((state) => state.listTokenStake);
   const loading = useSelector((state) => state.loading);
   const pools = useSelector((state) => state.pools);
+  const tokenLocked = useSelector((state) => state.tokenLocked);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -44,11 +48,20 @@ function Stake() {
     dispatch(setPendingIPhone());
     dispatch(setTokenStake());
     dispatch(setPoolInfo());
+    dispatch(setTokenLocked());
   }, [listTokenStake.length, dispatch, pools.length]);
 
   useEffect(() => {
     tokenAllowance[poolSelected] > 0 ? setStatusDeposit(false) : setStatusDeposit(true);
   }, [poolSelected, tokenAllowance]);
+
+  useEffect(() => {
+    let getApy = async () => {
+      let apy = await getAPY(pools, poolSelected, tokenLocked);
+      setApy(apy);
+    };
+    getApy();
+  }, [pools, poolSelected, tokenLocked]);
 
   function selectPool(key) {
     setPoolSelected(key);
@@ -64,7 +77,7 @@ function Stake() {
       <ButtonBack url='/home?preset=moveToRightFromLeft' />
       <div className='boxStake'>
         <h4>
-          ( <b>100</b> IPHONE / block )
+          ( <b>APY</b> {apy} )
         </h4>
         <div className='arrow-top'>
           <div className='chevron'></div>
