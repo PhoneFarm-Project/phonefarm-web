@@ -5,23 +5,29 @@ import IPhoneToken from 'contracts/IPhoneToken.json';
 import Store from 'contracts/Store.json';
 import Devices from 'contracts/Devices.json';
 import { parseBalance } from 'utils/helper';
-const factoryAddress = Factory.networks[process.env.REACT_APP_NETWORK_ID].address;
-const preSaleAddress = PreSale.networks[process.env.REACT_APP_NETWORK_ID].address;
-const iPhoneTokenAddress = IPhoneToken.networks[process.env.REACT_APP_NETWORK_ID].address;
-const storeAddress = Store.networks[process.env.REACT_APP_NETWORK_ID].address;
-const devicesAddress = Devices.networks[process.env.REACT_APP_NETWORK_ID].address;
+import { getContractAddress } from 'utils/getContractAddress';
+var contractAddress;
 
 export const SET_WEB3 = 'SET_WEB3';
-export const setWeb3 = (web3) => (dispatch) => {
+export const setWeb3 = (web3) => (dispatch, getState) => {
   dispatch({ type: SET_WEB3, web3 });
-  const factoryInstance = new web3.eth.Contract(Factory.abi, factoryAddress);
-  const preSaleInstance = new web3.eth.Contract(PreSale.abi, preSaleAddress);
-  const storeInstance = new web3.eth.Contract(Store.abi, storeAddress);
-  const devicesInstance = new web3.eth.Contract(Devices.abi, devicesAddress);
+  let { chainId } = getState();
+
+  contractAddress = getContractAddress(chainId);
+
+  const factoryInstance = new web3.eth.Contract(Factory.abi, contractAddress.factoryAddress);
+  const preSaleInstance = new web3.eth.Contract(PreSale.abi, contractAddress.PreSaleAddress);
+  const storeInstance = new web3.eth.Contract(Store.abi, contractAddress.storeAddress);
+  const devicesInstance = new web3.eth.Contract(Devices.abi, contractAddress.devicesAddress);
   dispatch(setFactory(factoryInstance));
   dispatch(setPreSale(preSaleInstance));
   dispatch(setStore(storeInstance));
   dispatch(setDevices(devicesInstance));
+};
+
+export const SET_CHAINID = 'SET_CHAINID';
+export const setChainId = (chainId) => (dispatch) => {
+  dispatch({ type: SET_CHAINID, chainId });
 };
 
 export const SET_ADDRESS = 'SET_ADDRESS';
@@ -127,7 +133,10 @@ export const setIPhoneBal = () => async (dispatch, getState) => {
   const walletAddress = state.walletAddress;
   const web3 = state.web3;
   try {
-    const iPhoneInstance = new web3.eth.Contract(IPhoneToken.abi, iPhoneTokenAddress);
+    const iPhoneInstance = new web3.eth.Contract(
+      IPhoneToken.abi,
+      contractAddress.iPhoneTokenAddress
+    );
     let iPhoneBal = await iPhoneInstance.methods.balanceOf(walletAddress).call();
     dispatch({ type: SET_IPHONE_BAL, iPhoneBal });
   } catch (e) {
@@ -146,7 +155,9 @@ export const setTokenAllowance = () => async (dispatch, getState) => {
     let tokenAllowance = [];
     for (let i = 0; i < pools.length; i++) {
       let tokenInstance = new web3.eth.Contract(PhoneToken.abi, pools[i].lpToken);
-      let allowance = await tokenInstance.methods.allowance(walletAddress, factoryAddress).call();
+      let allowance = await tokenInstance.methods
+        .allowance(walletAddress, contractAddress.factoryAddress)
+        .call();
       tokenAllowance.push(parseBalance(allowance));
     }
     dispatch({ type: SET_TOKEN_ALLOWANCE, tokenAllowance });
@@ -168,7 +179,9 @@ export const approveToken = (tokenAddress) => async (dispatch, getState) => {
   const weiValue = web3.utils.toWei('1000000000', 'ether');
   try {
     const tokenInstance = new web3.eth.Contract(PhoneToken.abi, tokenAddress);
-    await tokenInstance.methods.approve(factoryAddress, weiValue).send({ from: walletAddress });
+    await tokenInstance.methods
+      .approve(contractAddress.factoryAddress, weiValue)
+      .send({ from: walletAddress });
     dispatch(setTokenAllowance());
     dispatch(setLoading(false));
   } catch (e) {
@@ -249,9 +262,12 @@ export const setIPhoneAllowance = () => async (dispatch, getState) => {
   const walletAddress = state.walletAddress;
   const web3 = state.web3;
   try {
-    const iPhoneInstance = new web3.eth.Contract(IPhoneToken.abi, iPhoneTokenAddress);
+    const iPhoneInstance = new web3.eth.Contract(
+      IPhoneToken.abi,
+      contractAddress.iPhoneTokenAddress
+    );
     let iPhoneAllowance = await iPhoneInstance.methods
-      .allowance(walletAddress, storeAddress)
+      .allowance(walletAddress, contractAddress.storeAddress)
       .call();
     dispatch({ type: SET_IPHONE_ALLOWANCE, iPhoneAllowance });
   } catch (e) {
@@ -331,8 +347,13 @@ export const approveIPhone = () => async (dispatch, getState) => {
   const weiValue = web3.utils.toWei('1000000000', 'ether');
   dispatch(setLoading(true));
   try {
-    const iPhoneInstance = new web3.eth.Contract(IPhoneToken.abi, iPhoneTokenAddress);
-    await iPhoneInstance.methods.approve(storeAddress, weiValue).send({ from: walletAddress });
+    const iPhoneInstance = new web3.eth.Contract(
+      IPhoneToken.abi,
+      contractAddress.iPhoneTokenAddress
+    );
+    await iPhoneInstance.methods
+      .approve(contractAddress.storeAddress, weiValue)
+      .send({ from: walletAddress });
     dispatch(setIPhoneAllowance());
     dispatch(setLoading(false));
   } catch (e) {
@@ -382,7 +403,7 @@ export const setTokenLocked = () => async (dispatch, getState) => {
     let tokenLocked = [];
     for (let i = 0; i < pools.length; i++) {
       let tokenInstance = new web3.eth.Contract(PhoneToken.abi, pools[i].lpToken);
-      let lock = await tokenInstance.methods.balanceOf(factoryAddress).call();
+      let lock = await tokenInstance.methods.balanceOf(contractAddress.factoryAddress).call();
       tokenLocked.push(parseBalance(lock));
     }
     dispatch({ type: SET_TOKEN_LOCKED, tokenLocked });

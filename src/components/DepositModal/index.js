@@ -17,6 +17,7 @@ export default function DepositModal({
 
   const tokenBal = useSelector((state) => state.tokenBal);
   const pools = useSelector((state) => state.pools);
+  const chainId = useSelector((state) => state.chainId);
 
   const dispatch = useDispatch();
 
@@ -125,7 +126,7 @@ export default function DepositModal({
         <div className='w_100 text_left'>
           {pools[poolSelected] ? (
             <p>
-              Balance : {tokenBal[poolSelected]} {getSymbol(pools[poolSelected].lpToken)}
+              Balance : {tokenBal[poolSelected]} {getSymbol(chainId, pools[poolSelected].lpToken)}
             </p>
           ) : (
             <p>Balance : 0</p>

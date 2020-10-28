@@ -40,6 +40,7 @@ function Stake() {
   const loading = useSelector((state) => state.loading);
   const pools = useSelector((state) => state.pools);
   const tokenLocked = useSelector((state) => state.tokenLocked);
+  const chainId = useSelector((state) => state.chainId);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -57,11 +58,11 @@ function Stake() {
 
   useEffect(() => {
     let getApy = async () => {
-      let apy = await getAPY(pools, poolSelected, tokenLocked);
+      let apy = await getAPY(chainId, pools, poolSelected, tokenLocked);
       setApy(apy);
     };
     getApy();
-  }, [pools, poolSelected, tokenLocked]);
+  }, [chainId, pools, poolSelected, tokenLocked]);
 
   function selectPool(key) {
     setPoolSelected(key);
@@ -88,11 +89,11 @@ function Stake() {
         <Tabs defaultActiveKey='0' onChange={selectPool}>
           {pools.map((e, i) => {
             return (
-              <TabPane tab={getSymbol(e.lpToken)} key={i}>
+              <TabPane tab={getSymbol(chainId, e.lpToken)} key={i}>
                 <Pool
                   phoneStake={listTokenStake[i]}
                   pendingIPhone={pendingIPhone[i]}
-                  token={getSymbol(e.lpToken)}
+                  token={getSymbol(chainId, e.lpToken)}
                 />
               </TabPane>
             );
