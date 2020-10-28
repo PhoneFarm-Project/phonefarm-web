@@ -5,18 +5,23 @@
 import detectEthereumProvider from '@metamask/detect-provider';
 import Web3 from 'web3';
 import store from 'store';
-import { setWeb3, setAddress } from 'store/actions.js';
+import { setWeb3, setAddress, setChainId } from 'store/actions.js';
 
 export const connectMetaMask = async () => {
   // this returns the provider, or null if it wasn't detected
   const provider = await detectEthereumProvider();
   const ethereum = window.ethereum;
   const web3 = new Web3(window.ethereum);
-  let network = await web3.eth.net.getNetworkType();
-  if (network !== 'ropsten') {
-    alert('Please change to Ropsten testnet');
-    return;
+  let chainId = await web3.eth.net.getId();
+
+  if (chainId === 1) {
+    store.dispatch(setChainId(chainId));
+  } else if (chainId === 3) {
+    store.dispatch(setChainId(chainId));
+  } else {
+    alert('Please change to Ropsten testnet or Mainnet');
   }
+
   if (provider) {
     startApp(provider); // Initialize your app
   } else {

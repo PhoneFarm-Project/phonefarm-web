@@ -1,9 +1,9 @@
 import { getSymbol } from 'utils/getErc20';
-export async function getAPY(pools, poolSelected, tokenLocked) {
+export async function getAPY(chainId, pools, poolSelected, tokenLocked) {
   if (pools.length === 0 || tokenLocked.length === 0) {
     return 0;
   }
-  let symbol = getSymbol(pools[poolSelected].lpToken);
+  let symbol = getSymbol(chainId, pools[poolSelected].lpToken);
   symbol = symbol.toUpperCase();
   let tokenPrice;
   if (symbol === 'PHONE') {

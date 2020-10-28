@@ -2,6 +2,7 @@ import * as actions from './actions';
 
 const initialState = {
   web3: null,
+  chainId: null,
   walletAddress: null,
   balance: 0,
   factoryInstance: null,
@@ -28,6 +29,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         web3: action.web3,
+      };
+    case actions.SET_CHAINID:
+      return {
+        ...state,
+        chainId: action.chainId,
       };
     case actions.SET_ADDRESS:
       return {
