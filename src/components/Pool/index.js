@@ -1,24 +1,36 @@
 import React from 'react';
-import TokenBox from 'components/TokenBox';
+import './style.scss';
 
-import PhoneIcon from 'assets/icons/phoneFarm-logo-128.png';
-import IphoneIcon from 'assets/icons/Iphone-token-128.png';
-import DaiIcon from 'assets/icons/dai-icon.png';
-
-export default function Pool({ token, phoneStake, pendingIPhone }) {
+export default function Pool({ apy, token, phoneStake, pendingIPhone }) {
   return (
     <div className='deposited-and-iphone'>
-      <div className='row'>
-        <div className='col-6'>
-          <TokenBox
-            image={token === 'DAI' ? DaiIcon : PhoneIcon}
-            symbol={token}
-            amout={phoneStake}
-          />
+      <div className='pool_iphone'>
+        <div className='ip_center'>
+          <p className='ip_number'>{pendingIPhone}</p>
+          <p className='ip'>IPHONE</p>
         </div>
-        <div className='col-6'>
-          <TokenBox image={IphoneIcon} symbol='IPHONE' amout={pendingIPhone} />
+
+        <p className='gray'>Profit</p>
+      </div>
+      <div className='pool_apy'>
+        <div className='apy' />
+        <div className='arrow-top'>
+          <div className='chevron'></div>
+          <div className='chevron'></div>
+          <div className='chevron'></div>
         </div>
+        <div className='apy'>
+          <p className='apy_number'>{Math.round(apy * 100) / 100}%</p>
+          <p className='gray'>APY</p>
+        </div>
+      </div>
+
+      <div className='pool_staked'>
+        <div className='staked_center'>
+          <p className='staked_number'>{phoneStake}</p>
+          <p className='staked'>{token}</p>
+        </div>
+        <p>Staked</p>
       </div>
     </div>
   );

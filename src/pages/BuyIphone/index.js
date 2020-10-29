@@ -97,7 +97,7 @@ export default function BuyIphone() {
 
   return (
     <div className='styleStake scroll_able'>
-      <ButtonBack url='/home?preset=moveToRightFromLeft' />
+      <ButtonBack url='/home?preset=moveToRightFromLeft' text='Home' />
       <Spin
         indicator={antIcon}
         spinning={loading && currentPhone === null}

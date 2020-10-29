@@ -115,9 +115,9 @@ $phone-height: 100vh;
       border-radius: 5vh;
     }
     .style_iframe {
-      width: ($phone-height/19.5) * 8.52;
-      height: $phone-height * 0.9;
-      border-radius: $phone-height/18.8;
+      width: ($phone-height/19.5) * 8.62;
+      height: $phone-height * 0.924;
+      border-radius: $phone-height/25;
     }
     .lock {
       height: 66%;
@@ -126,55 +126,55 @@ $phone-height: 100vh;
 }
 
 .iphoneXS {
-    .content_box {
-        .default_layout {
-            height: $phone-height * 0.858;
-            border-radius: $phone-height * 0.1;
-            width: ($phone-height/19.5) * 8.7;
-        }
-        .style_iframe{
-            width: ($phone-height/19.5) * 8.7;
-            height: $phone-height * 0.884;
-            border-top-left-radius: 0.5em;
-            border-top-right-radius: 0.5em;
-            border-bottom-right-radius: 2.2em;
-            border-bottom-left-radius: 2.2em;
-            top: 6.7vh;
-            left: 2vw;
-        }
-        .lock {
-            height: 80%;
-            .screen_size{
-                height: $phone-height * 0.95;
-                width: ($phone-height/19.5) * 9.6;
-            }
-        }
+  .content_box {
+    .default_layout {
+      height: $phone-height * 0.858;
+      border-radius: $phone-height * 0.1;
+      width: ($phone-height/19.5) * 8.7;
     }
+    .style_iframe {
+      width: ($phone-height/19.5) * 8.7;
+      height: $phone-height * 0.884;
+      border-top-left-radius: 0.5em;
+      border-top-right-radius: 0.5em;
+      border-bottom-right-radius: 2.2em;
+      border-bottom-left-radius: 2.2em;
+      top: 6.7vh;
+      left: 2vw;
+    }
+    .lock {
+      height: 80%;
+      .screen_size {
+        height: $phone-height * 0.95;
+        width: ($phone-height/19.5) * 9.6;
+      }
+    }
+  }
 }
 
 .iphoneXR {
-    .content_box {
-        .default_layout {
-            width: ($phone-height/19.5) * 8.65;
-            height: $phone-height * 0.858;
-            border-radius: $phone-height * 0.1;
-        }
-        .style_iframe{
-            width: ($phone-height/19.5) * 8.65;
-            height: $phone-height * 0.88;
-            border-top-left-radius: 0.5em;
-            border-top-right-radius: 0.5em;
-            border-bottom-right-radius: 2.2em;
-            border-bottom-left-radius: 2.2em;
-            top: 6.7vh;
-            left: 2.05vw;
-        }
-        .lock {
-            height: 80%;
-            .screen_size{
-                height: $phone-height * 0.95;
-                width: ($phone-height/19.5) * 9.6;
-            }
-        }
+  .content_box {
+    .default_layout {
+      width: ($phone-height/19.5) * 8.65;
+      height: $phone-height * 0.858;
+      border-radius: $phone-height * 0.1;
     }
+    .style_iframe {
+      width: ($phone-height/19.5) * 8.65;
+      height: $phone-height * 0.88;
+      border-top-left-radius: 0.5em;
+      border-top-right-radius: 0.5em;
+      border-bottom-right-radius: 2.2em;
+      border-bottom-left-radius: 2.2em;
+      top: 6.7vh;
+      left: 2.05vw;
+    }
+    .lock {
+      height: 80%;
+      .screen_size {
+        height: $phone-height * 0.95;
+        width: ($phone-height/19.5) * 9.6;
+      }
+    }
+  }
 }
