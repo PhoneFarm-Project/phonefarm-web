@@ -6,7 +6,7 @@ const initialState = {
   walletAddress: null,
   balance: 0,
   factoryInstance: null,
-  preSaleInstance: null,
+  saleInstance: null,
   storeInstance: null,
   devicesInstance: null,
   tokenBal: [],
@@ -50,10 +50,10 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         factoryInstance: action.factoryInstance,
       };
-    case actions.SET_PRESALE:
+    case actions.SET_SALE:
       return {
         ...state,
-        preSaleInstance: action.preSaleInstance,
+        saleInstance: action.saleInstance,
       };
     case actions.SET_STORE:
       return {

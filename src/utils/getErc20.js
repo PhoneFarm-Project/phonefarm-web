@@ -23,6 +23,17 @@ const tokenInfo = {
       symbol: 'LINK',
     },
   },
+  4: {
+    '0x1c65f713B1A204dDfe8db10f7011490843457bbF': {
+      symbol: 'PHONE',
+    },
+    '0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735': {
+      symbol: 'DAI',
+    },
+    '0x01be23585060835e02b77ef475b0cc51aa1e0709': {
+      symbol: 'LINK',
+    },
+  },
 };
 
 export const getSymbol = (_chainId, _address) => {
