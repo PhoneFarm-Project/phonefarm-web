@@ -130,17 +130,16 @@ $phone-height: 100vh;
     .default_layout {
       height: $phone-height * 0.858;
       border-radius: $phone-height * 0.1;
-      width: ($phone-height/19.5) * 8.7;
+      width: ($phone-height/19.5) * 8.67;
     }
     .style_iframe {
-      width: ($phone-height/19.5) * 8.7;
+      width: ($phone-height/19.5) * 8.67;
       height: $phone-height * 0.884;
       border-top-left-radius: 0.5em;
       border-top-right-radius: 0.5em;
       border-bottom-right-radius: 2.2em;
       border-bottom-left-radius: 2.2em;
       top: 6.7vh;
-      left: 2vw;
     }
     .lock {
       height: 80%;

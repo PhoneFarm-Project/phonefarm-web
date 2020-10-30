@@ -77,7 +77,6 @@ $base: 0.6rem;
 
 .stake_header {
   position: absolute;
-  background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%);
   width: 100%;
   height: 6vh;
   top: 0;
@@ -120,8 +119,8 @@ $base: 0.6rem;
 
 .number_font {
   margin: 0;
-  height: 8vh;
-  font-size: 12vw;
+  height: 4.7vh;
+  font-size: 6vw;
   text-align: right;
 }
 
@@ -142,4 +141,8 @@ $base: 0.6rem;
   height: 2vh !important;
   display: flex;
   align-items: center;
+}
+
+.w32px {
+  width: 32px;
 }

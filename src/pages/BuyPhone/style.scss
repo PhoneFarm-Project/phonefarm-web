@@ -2,6 +2,10 @@
   height: 85vh !important;
   display: flex;
   justify-content: center;
+  .buy-phone-header {
+    top: 0;
+    position: absolute;
+  }
 }
 .iph_input {
   width: 80%;
@@ -38,7 +42,7 @@
 }
 
 .scroll_able {
-  padding-top: 4vh;
+  // padding-top: 4vh;
   overflow: overlay;
 }
 
