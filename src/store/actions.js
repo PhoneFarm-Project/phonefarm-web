@@ -1,5 +1,5 @@
 import Factory from 'contracts/MasterFactory.json';
-import PreSale from 'contracts/PreSale.json';
+import Sale from 'contracts/Sale.json';
 import PhoneToken from 'contracts/PhoneToken.json';
 import IPhoneToken from 'contracts/IPhoneToken.json';
 import Store from 'contracts/Store.json';
@@ -16,11 +16,11 @@ export const setWeb3 = (web3) => (dispatch, getState) => {
   contractAddress = getContractAddress(chainId);
 
   const factoryInstance = new web3.eth.Contract(Factory.abi, contractAddress.factoryAddress);
-  const preSaleInstance = new web3.eth.Contract(PreSale.abi, contractAddress.PreSaleAddress);
+  const saleInstance = new web3.eth.Contract(Sale.abi, contractAddress.saleAddress);
   const storeInstance = new web3.eth.Contract(Store.abi, contractAddress.storeAddress);
   const devicesInstance = new web3.eth.Contract(Devices.abi, contractAddress.devicesAddress);
   dispatch(setFactory(factoryInstance));
-  dispatch(setPreSale(preSaleInstance));
+  dispatch(setSale(saleInstance));
   dispatch(setStore(storeInstance));
   dispatch(setDevices(devicesInstance));
 };
@@ -56,9 +56,9 @@ export const setFactory = (factoryInstance) => (dispatch) => {
   dispatch({ type: SET_FACTORY, factoryInstance });
 };
 
-export const SET_PRESALE = 'SET_PRESALE';
-export const setPreSale = (preSaleInstance) => (dispatch) => {
-  dispatch({ type: SET_PRESALE, preSaleInstance });
+export const SET_SALE = 'SET_SALE';
+export const setSale = (saleInstance) => (dispatch) => {
+  dispatch({ type: SET_SALE, saleInstance });
 };
 
 export const SET_STORE = 'SET_STORE';
@@ -381,11 +381,11 @@ export const buyDevice = (_id) => async (dispatch, getState) => {
 export const buyTokenPhone = (amount) => async (dispatch, getState) => {
   let state = getState();
   const { web3, walletAddress } = state;
-  const preSaleInstance = state.preSaleInstance;
+  const saleInstance = state.saleInstance;
   const weiValue = web3.utils.toWei(amount.toString(), 'ether');
   dispatch(setLoading(true));
   try {
-    await preSaleInstance.methods.buyTokenPhone().send({ from: walletAddress, value: weiValue });
+    await saleInstance.methods.buyTokenPhone().send({ from: walletAddress, value: weiValue });
     dispatch(setLoading(false));
   } catch (e) {
     dispatch(setLoading(false));
