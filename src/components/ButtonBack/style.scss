@@ -1,16 +1,21 @@
 .box-btn-back {
-  height: 4vh;
+  height: 5vw;
+  width: 5vw;
   z-index: 1000;
+  display: flex;
   background-color: #f0f2f5;
-  position: fixed;
   left: 0;
-  top: 0;
   text-align: start;
+  .ant-btn {
+    display: flex;
+  }
   .link-btn-back {
-    position: fixed;
     left: 0;
+    text-decoration: none;
     .iconLeftOutlined {
-      font-size: 22.5px;
+      font-size: 5vw;
+      display: flex;
+      align-items: center;
     }
     .btn-back {
       border-radius: 5px;

@@ -24,7 +24,7 @@ const tokenInfo = {
     },
   },
   4: {
-    '0x1c65f713B1A204dDfe8db10f7011490843457bbF': {
+    '0x7fd5B54c39ba2665c9D416532BE79f0257F387F0': {
       symbol: 'PHONE',
     },
     '0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735': {

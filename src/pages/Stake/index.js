@@ -17,7 +17,7 @@ import {
   setTokenLocked,
 } from 'store/actions';
 
-import PhoneFarm from 'assets/images/logo.png';
+import PhoneFarm from 'assets/images/logo-black.png';
 import PhoneIcon from 'assets/icons/phoneFarm-logo-128.png';
 import DaiIcon from 'assets/icons/dai-icon.png';
 import './style.scss';
@@ -85,15 +85,11 @@ function Stake() {
   return (
     <Layout className='styleStake stake audio_font'>
       <div className='stake_header flex_between'>
-        <div>
-          <ButtonBack
-            url='/home?preset=moveToRightFromLeft'
-            size='small'
-            color={{ color: 'white' }}
-          />
+        <div className='w32px'>
+          <ButtonBack url='/home?preset=moveToRightFromLeft' size='small' />
         </div>
         <img src={PhoneFarm} alt='phonefarm' />
-        <div />
+        <div className='w32px' />
       </div>
 
       <div className='phone_info flex_between'>
@@ -125,7 +121,7 @@ function Stake() {
           <></>
         )}
         <div className='w50'>
-          <p className='number_font'>{tokenBal[poolSelected]}</p>
+          <p className='number_font'>{Math.round(tokenBal[poolSelected] * 100) / 100}</p>
           <p className='balance_font'>balance</p>
         </div>
       </div>
