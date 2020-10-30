@@ -225,6 +225,7 @@ const iphoneInfo = {
       style: 'iphone3',
       img: iPhone3Img,
       layout: iPhone3,
+      codeColor: '#1F2020',
     },
   },
   '3S': {
@@ -232,6 +233,7 @@ const iphoneInfo = {
       style: 'iphone3',
       img: iPhone3SImg,
       layout: iPhone3S,
+      codeColor: '#1F2020',
     },
   },
   4: {
@@ -239,11 +241,13 @@ const iphoneInfo = {
       style: 'iphone4',
       img: iPhone4BlackImg,
       layout: iPhone4Black,
+      codeColor: '#1F2020',
     },
     White: {
       style: 'iphone4',
       img: iPhone4WhiteImg,
       layout: iPhone4White,
+      codeColor: '#f8f6ef',
     },
   },
   5: {
@@ -251,11 +255,13 @@ const iphoneInfo = {
       style: 'iphone5',
       img: iPhone5BlackImg,
       layout: iPhone5Black,
+      codeColor: '#1F2020',
     },
     White: {
       style: 'iphone5',
       img: iPhone5WhiteImg,
       layout: iPhone5White,
+      codeColor: '#f8f6ef',
     },
   },
   '5S': {
@@ -263,16 +269,19 @@ const iphoneInfo = {
       style: 'iphone5',
       img: iPhone5SBlackImg,
       layout: iPhone5SBlack,
+      codeColor: '#1F2020',
     },
     Gold: {
       style: 'iphone5',
       img: iPhone5SGoldImg,
       layout: iPhone5SGold,
+      codeColor: '##F5DDC5',
     },
     Silver: {
       style: 'iphone5',
       img: iPhone5SSilverImg,
       layout: iPhone5SSilver,
+      codeColor: '#E4E4E2',
     },
   },
   '5C': {
@@ -280,26 +289,31 @@ const iphoneInfo = {
       style: 'iphone5',
       img: iPhone5CPinkImg,
       layout: iPhone5CPink,
+      codeColor: '#ff8282 ',
     },
     White: {
       style: 'iphone5',
       img: iPhone5CWhiteImg,
       layout: iPhone5CWhite,
+      codeColor: '#f8f6ef',
     },
     Yellow: {
       style: 'iphone5',
       img: iPhone5CYellowImg,
       layout: iPhone5CYellow,
+      codeColor: '#feec74',
     },
     Blue: {
       style: 'iphone5',
       img: iPhone5CBlueImg,
       layout: iPhone5CBlue,
+      codeColor: '#47aee6',
     },
     Green: {
       style: 'iphone5',
       img: iPhone5CGreenImg,
       layout: iPhone5CGreen,
+      codeColor: '#a0ec70',
     },
   },
   6: {
@@ -307,16 +321,19 @@ const iphoneInfo = {
       style: 'iphone6',
       img: iPhone6SpaceGrayImg,
       layout: iPhone6SpaceGray,
+      codeColor: '#343d52',
     },
     Gold: {
       style: 'iphone6',
       img: iPhone6GoldImg,
       layout: iPhone6Gold,
+      codeColor: '#DFCCB7',
     },
     Silver: {
       style: 'iphone6',
       img: iPhone6SilverImg,
       layout: iPhone6Silver,
+      codeColor: '#E4E4E2',
     },
   },
   '6Plus': {
@@ -324,16 +341,19 @@ const iphoneInfo = {
       style: 'iphone6',
       img: iPhone6PlusGoldImg,
       layout: iPhone6PlusGold,
+      codeColor: '#DFCCB7',
     },
     Silver: {
       style: 'iphone6',
       img: iPhone6PlusSilverImg,
       layout: iPhone6PlusSilver,
+      codeColor: '#E4E4E2',
     },
     SpaceGray: {
       style: 'iphone6',
       img: iPhone6PlusSpaceGrayImg,
       layout: iPhone6PlusSpaceGray,
+      codeColor: '#343d52',
     },
   },
   '6S': {
@@ -341,6 +361,7 @@ const iphoneInfo = {
       style: 'iphone6',
       img: iPhone6SGoldImg,
       layout: iPhone6SGold,
+      codeColor: '#DFCCB7',
     },
     RoseGold: {
       style: 'iphone6',
@@ -351,11 +372,13 @@ const iphoneInfo = {
       style: 'iphone6',
       img: iPhone6SSilverImg,
       layout: iPhone6SSilver,
+      codeColor: '#E4E4E2',
     },
     SpaceGray: {
       style: 'iphone6',
       img: iPhone6SSpaceGrayImg,
       layout: iPhone6SSpaceGray,
+      codeColor: '#343d52',
     },
   },
   '6SPlus': {
@@ -363,6 +386,7 @@ const iphoneInfo = {
       style: 'iphone6',
       img: iPhone6SPlusGoldImg,
       layout: iPhone6SPlusGold,
+      codeColor: '#DFCCB7',
     },
     RoseGold: {
       style: 'iphone6',
@@ -373,11 +397,13 @@ const iphoneInfo = {
       style: 'iphone6',
       img: iPhone6SPlusSilverImg,
       layout: iPhone6SPlusSilver,
+      codeColor: '#E4E4E2',
     },
     SpaceGray: {
       style: 'iphone6',
       img: iPhone6SPlusSpaceGrayImg,
       layout: iPhone6SPlusSpaceGray,
+      codeColor: '#343d52',
     },
   },
   SE1: {
@@ -385,6 +411,7 @@ const iphoneInfo = {
       style: 'iphoneSE1',
       img: iPhoneSE1GoldImg,
       layout: iPhoneSE1Gold,
+      codeColor: '#DFCCB7',
     },
     RoseGold: {
       style: 'iphoneSE1',
@@ -395,11 +422,13 @@ const iphoneInfo = {
       style: 'iphoneSE1',
       img: iPhoneSE1SilverImg,
       layout: iPhoneSE1Silver,
+      codeColor: '#E4E4E2',
     },
     SpaceGray: {
       style: 'iphoneSE1',
       img: iPhoneSE1SpaceGrayImg,
       layout: iPhoneSE1SpaceGray,
+      codeColor: '#343d52',
     },
   },
   7: {
@@ -407,21 +436,25 @@ const iphoneInfo = {
       style: 'iphone7',
       img: iPhone7RoseGoldImg,
       layout: iPhone7RoseGold,
+      codeColor: '#E6C7C2',
     },
     Gold: {
       style: 'iphone7',
       img: iPhone7GoldImg,
       layout: iPhone7Gold,
+      codeColor: '#DFCCB7',
     },
     Silver: {
       style: 'iphone7',
       img: iPhone7SilverImg,
       layout: iPhone7Silver,
+      codeColor: '#E4E4E2',
     },
     Black: {
       style: 'iphone7',
       img: iPhone7BlackImg,
       layout: iPhone7Black,
+      codeColor: '#1F2020',
     },
   },
   '7Plus': {
@@ -429,21 +462,25 @@ const iphoneInfo = {
       style: 'iphone7',
       img: iPhone7PlusRoseGoldImg,
       layout: iPhone7PlusRoseGold,
+      codeColor: '#E6C7C2',
     },
     Gold: {
       style: 'iphone7',
       img: iPhone7PlusGoldImg,
       layout: iPhone7PlusGold,
+      codeColor: '#DFCCB7',
     },
     Silver: {
       style: 'iphone7',
       img: iPhone7PlusSilverImg,
       layout: iPhone7PlusSilver,
+      codeColor: '#E4E4E2',
     },
     Black: {
       style: 'iphone7',
       img: iPhone7PlusBlackImg,
       layout: iPhone7PlusBlack,
+      codeColor: '#1F2020',
     },
   },
   8: {
@@ -451,6 +488,7 @@ const iphoneInfo = {
       style: 'iphone8',
       img: iPhone8GoldImg,
       layout: iPhone8Gold,
+      codeColor: '#DFCCB7',
     },
     Red: {
       style: 'iphone8',
@@ -462,11 +500,13 @@ const iphoneInfo = {
       style: 'iphone8',
       img: iPhone8SilverImg,
       layout: iPhone8Silver,
+      codeColor: '#E4E4E2',
     },
     SpaceGray: {
       style: 'iphone8',
       img: iPhone8SpaceGrayImg,
       layout: iPhone8SpaceGray,
+      codeColor: '#343d52',
     },
   },
   '8Plus': {
@@ -474,21 +514,25 @@ const iphoneInfo = {
       style: 'iphone8',
       img: iPhone8PlusGoldImg,
       layout: iPhone8PlusGold,
+      codeColor: '#DFCCB7',
     },
     Red: {
       style: 'iphone8',
       img: iPhone8PlusRedImg,
       layout: iPhone8PlusRed,
+      codeColor: '#ff0000',
     },
     Silver: {
       style: 'iphone8',
       img: iPhone8PlusSilverImg,
       layout: iPhone8PlusSilver,
+      codeColor: '#E4E4E2',
     },
     SpaceGray: {
       style: 'iphone8',
       img: iPhone8PlusSpaceGrayImg,
       layout: iPhone8PlusSpaceGray,
+      codeColor: '#343d52',
     },
   },
   X: {
@@ -496,11 +540,13 @@ const iphoneInfo = {
       style: 'iphoneX',
       img: iPhoneXSilverImg,
       layout: iPhoneXSilver,
+      codeColor: '#E4E4E2',
     },
     SpaceGray: {
       style: 'iphoneX',
       img: iPhoneXSpaceGrayImg,
       layout: iPhoneXSpaceGray,
+      codeColor: '#343d52',
     },
   },
   XR: {
@@ -508,32 +554,37 @@ const iphoneInfo = {
       style: 'iphoneXR',
       img: iPhoneXRBlackImg,
       layout: iPhoneXRBlack,
+      codeColor: '#1e1e1e',
     },
     Blue: {
       style: 'iphoneXR',
       img: iPhoneXRBlueImg,
       layout: iPhoneXRBlue,
-      codeColor: '#1890ff',
+      codeColor: '#47aee6',
     },
     Coral: {
       style: 'iphoneXR',
       img: iPhoneXRCoralImg,
       layout: iPhoneXRCoral,
+      codeColor: '#fe6e5a',
     },
     Red: {
       style: 'iphoneXR',
       img: iPhoneXRRedImg,
       layout: iPhoneXRRed,
+      codeColor: '#980312',
     },
     White: {
       style: 'iphoneXR',
       img: iPhoneXRWhiteImg,
       layout: iPhoneXRWhite,
+      codeColor: '#333',
     },
     Yellow: {
       style: 'iphoneXR',
       img: iPhoneXRYellowImg,
       layout: iPhoneXRYellow,
+      codeColor: '#f8d045',
     },
   },
   XS: {
@@ -541,16 +592,19 @@ const iphoneInfo = {
       style: 'iphoneXS',
       img: iPhoneXSGoldImg,
       layout: iPhoneXSGold,
+      codeColor: '#DFCCB7',
     },
     SpaceGray: {
       style: 'iphoneXS',
       img: iPhoneXSSpaceGrayImg,
       layout: iPhoneXSSpaceGray,
+      codeColor: '#343d52',
     },
     Silver: {
       style: 'iphoneXS',
       img: iPhoneXSSilverImg,
       layout: iPhoneXSSilver,
+      codeColor: '#E4E4E2',
     },
   },
   XSMax: {
@@ -558,6 +612,7 @@ const iphoneInfo = {
       style: 'iphoneXS',
       img: iPhoneXSMaxGoldImg,
       layout: iPhoneXSMaxGold,
+      codeColor: '#DFCCB7',
     },
     SpaceGray: {
       style: 'iphoneXS',
@@ -569,6 +624,7 @@ const iphoneInfo = {
       style: 'iphoneXS',
       img: iPhoneXSMaxSilverImg,
       layout: iPhoneXSMaxSilver,
+      codeColor: '#E4E4E2',
     },
   },
   11: {
@@ -576,32 +632,37 @@ const iphoneInfo = {
       style: 'iphone11',
       img: iPhone11BlackImg,
       layout: iPhone11Black,
-      codeColor: '#000000',
+      codeColor: '#1F2020',
     },
     Green: {
       style: 'iphone11',
       img: iPhone11GreenImg,
       layout: iPhone11Green,
+      codeColor: '#ade0cd',
     },
     Purple: {
       style: 'iphone11',
       img: iPhone11PurpleImg,
       layout: iPhone11Purple,
+      codeColor: '#d2ccdb',
     },
     Red: {
       style: 'iphone11',
       img: iPhone11RedImg,
       layout: iPhone11Red,
+      codeColor: '#b90e2f',
     },
     White: {
       style: 'iphone11',
       img: iPhone11WhiteImg,
       layout: iPhone11White,
+      codeColor: '#f8f6ef',
     },
     Yellow: {
       style: 'iphone11',
       img: iPhone11YellowImg,
       layout: iPhone11Yellow,
+      codeColor: '#ffe781',
     },
   },
   '11Pro': {
@@ -609,21 +670,25 @@ const iphoneInfo = {
       style: 'iphone11',
       img: iPhone11ProGoldImg,
       layout: iPhone11ProGold,
+      codeColor: '#f6d5ba',
     },
     MidnightGreen: {
       style: 'iphone11',
       img: iPhone11ProMidnightGreenImg,
       layout: iPhone11ProMidnightGreen,
+      codeColor: '##505952',
     },
     Silver: {
       style: 'iphone11',
       img: iPhone11ProSilverImg,
       layout: iPhone11ProSilver,
+      codeColor: '#eae9e0',
     },
     SpaceGray: {
       style: 'iphone11',
       img: iPhone11ProSpaceGrayImg,
       layout: iPhone11ProSpaceGray,
+      codeColor: '#343d52',
     },
   },
   '11ProMax': {
@@ -631,21 +696,25 @@ const iphoneInfo = {
       style: 'iphone11',
       img: iPhone11ProMaxGoldImg,
       layout: iPhone11ProMaxGold,
+      codeColor: '#f6d5ba',
     },
     MidnightGreen: {
       style: 'iphone11',
       img: iPhone11ProMaxMidnightGreenImg,
       layout: iPhone11ProMaxMidnightGreen,
+      codeColor: '##505952',
     },
     Silver: {
       style: 'iphone11',
       img: iPhone11ProMaxSilverImg,
       layout: iPhone11ProMaxSilver,
+      codeColor: '#eae9e0',
     },
     SpaceGray: {
       style: 'iphone11',
       img: iPhone11ProMaxSpaceGrayImg,
       layout: iPhone11ProMaxSpaceGray,
+      codeColor: '#343d52',
     },
   },
   SE2: {
@@ -653,16 +722,19 @@ const iphoneInfo = {
       style: 'iphoneSE2',
       img: iPhoneSE2BlackImg,
       layout: iPhoneSE2Black,
+      codeColor: '#1F202',
     },
     White: {
       style: 'iphoneSE2',
       img: iPhoneSE2WhiteImg,
       layout: iPhoneSE2White,
+      codeColor: '#F9F6EF',
     },
     Red: {
       style: 'iphoneSE2',
       img: iPhoneSE2RedImg,
       layout: iPhoneSE2Red,
+      codeColor: '#A5282C',
     },
   },
   '12Mini': {
@@ -670,26 +742,31 @@ const iphoneInfo = {
       style: 'iphone12',
       img: iPhone12MiniBlackImg,
       layout: iPhone12MiniBlack,
+      codeColor: '#1F2020',
     },
     Blue: {
       style: 'iphone12',
       img: iPhone12MiniBlueImg,
       layout: iPhone12MiniBlue,
+      codeColor: '#5EB0E5',
     },
     Green: {
       style: 'iphone12',
       img: iPhone12MiniGreenImg,
       layout: iPhone12MiniGreen,
+      codeColor: '#AEE1CD',
     },
     Red: {
       style: 'iphone12',
       img: iPhone12MiniRedImg,
       layout: iPhone12MiniRed,
+      codeColor: '#BA0C2E',
     },
     White: {
       style: 'iphone12',
       img: iPhone12MiniWhiteImg,
       layout: iPhone12MiniWhite,
+      codeColor: '#F9F6EF',
     },
   },
   12: {
@@ -697,26 +774,31 @@ const iphoneInfo = {
       style: 'iphone12',
       img: iPhone12BlackImg,
       layout: iPhone12Black,
+      codeColor: '#1F2020',
     },
     Blue: {
       style: 'iphone12',
       img: iPhone12BlueImg,
       layout: iPhone12Blue,
+      codeColor: '#47aee6',
     },
     Green: {
       style: 'iphone12',
       img: iPhone12GreenImg,
       layout: iPhone12Green,
+      codeColor: '#ade0cd',
     },
     Red: {
       style: 'iphone12',
       img: iPhone12RedImg,
       layout: iPhone12Red,
+      codeColor: '#ff0000',
     },
     White: {
       style: 'iphone12',
       img: iPhone12WhiteImg,
       layout: iPhone12White,
+      codeColor: '#F9F6EF',
     },
   },
   '12Pro': {
@@ -724,21 +806,25 @@ const iphoneInfo = {
       style: 'iphone12',
       img: iPhone12ProGoldImg,
       layout: iPhone12ProGold,
+      codeColor: '#F5DDC5',
     },
     Graphite: {
       style: 'iphone12',
       img: iPhone12ProGraphiteImg,
       layout: iPhone12ProGraphite,
+      codeColor: '#43423e',
     },
     PacificBlue: {
       style: 'iphone12',
       img: iPhone12ProPacificBlueImg,
       layout: iPhone12ProPacificBlue,
+      codeColor: '#27414d',
     },
     Silver: {
       style: 'iphone12',
       img: iPhone12ProSilverImg,
       layout: iPhone12ProSilver,
+      codeColor: '#eae9e0',
     },
   },
   '12ProMax': {
@@ -746,21 +832,25 @@ const iphoneInfo = {
       style: 'iphone12',
       img: iPhone12ProMaxGoldImg,
       layout: iPhone12ProMaxGold,
+      codeColor: '#F5DDC5',
     },
     Graphite: {
       style: 'iphone12',
       img: iPhone12ProMaxGraphiteImg,
       layout: iPhone12ProMaxGraphite,
+      codeColor: '#43423e',
     },
     PacificBlue: {
       style: 'iphone12',
       img: iPhone12ProMaxPacificBlueImg,
       layout: iPhone12ProMaxPacificBlue,
+      codeColor: '#27414d',
     },
     Silver: {
       style: 'iphone12',
       img: iPhone12ProMaxSilverImg,
       layout: iPhone12ProMaxSilver,
+      codeColor: '#eae9e0',
     },
   },
 };

@@ -11,11 +11,11 @@ const contractAddress = {
   },
   // Rinkeby network
   4: {
-    factoryAddress: '0xb2BEfE869614D03C850039dE8d19dDfce62D0253',
-    saleAddress: '0xEF37C86C93dD73c2e574276432D471027C8DDE95',
-    iPhoneTokenAddress: '0x4152B58Cf953698424d12bB239835a370055D3bB',
-    storeAddress: '0x710802C0da451Ad5e6fA16894eA0494d245Bb6b8',
-    devicesAddress: '0xd553a95F30E801c760A878F4d92c8304df5b01Aa',
+    factoryAddress: '0xe81790EF8f83C7eFf25d128F95d6E2B996338a1a',
+    saleAddress: '0x8C8CdbBfec86A1b023c4fDCE880866F68F8955aC',
+    iPhoneTokenAddress: '0x749F733bf080b03Eb4475eD5534B1d1EDf504803',
+    storeAddress: '0xE3C5aF10922bA0462A1c6dEd363DdaBcAFcC18f0',
+    devicesAddress: '0x4C9FD1f58A8827f423E1A06cA36519864461272D',
   },
 };
 
