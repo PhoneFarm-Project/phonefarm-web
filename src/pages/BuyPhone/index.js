@@ -52,7 +52,7 @@ export default function BuyPhone() {
 
   return (
     <Layout className='styleStake buy-phone'>
-      <ButtonBack url='/home?preset=moveToRightFromLeft' />
+      <ButtonBack url='/home?preset=moveToRightFromLeft' text='Home' />
       <div className='boxStake'>
         <p>
           <img className='token-transfer' src={EthIcon} alt='eth' /> <i className='arrow' />

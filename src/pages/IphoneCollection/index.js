@@ -27,7 +27,7 @@ export default function IphoneCollection() {
   };
   return (
     <div className='styleStake scroll_able'>
-      <ButtonBack url='/home?preset=moveToRightFromLeft' />
+      <ButtonBack url='/home?preset=moveToRightFromLeft' text='Home' />
       <Spin indicator={antIcon} spinning={loading} className='spin-center-screen'>
         <p className='ip_font head_font'>Your iPhone Collection</p>
         {!loading && ownedDevices.length <= 0 ? (

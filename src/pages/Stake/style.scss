@@ -1,20 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 $base: 0.6rem;
 
 .stake {
-  height: 90vh !important;
+  height: 90% !important;
   display: flex;
-  justify-content: center;
   .boxStake {
     min-height: 400px;
   }
 }
 
+.audio_font {
+  font-family: 'Audiowide', cursive;
+}
+
 .styleStake {
   &::-webkit-scrollbar {
-    width: 0 !important
+    width: 0 !important;
   }
   position: relative;
-  padding: 0vh 0.5em 1em 0.5em;
+  padding: 0vh 0em 1em 0em;
   height: 100vh;
   background: #f0f2f5;
   .boxStake {
@@ -32,71 +36,20 @@ $base: 0.6rem;
       margin-top: 0;
       margin-bottom: 80px;
     }
-
-    .arrow-top {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      // width: 100%;
-      position: relative;
-    }
-    .chevron {
-      position: absolute;
-      top: 15px;
-      width: $base * 3.5;
-      height: $base * 0.8;
-      opacity: 0;
-      transform: scale(0.3);
-      animation: move-chevron 3s ease-out infinite;
-    }
-    .chevron:first-child {
-      animation: move-chevron 3s ease-out 1s infinite;
-    }
-    .chevron:nth-child(2) {
-      animation: move-chevron 3s ease-out 2s infinite;
-    }
-    .chevron:before,
-    .chevron:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 50%;
-      background: #2c3e50;
-    }
-    .chevron:before {
-      left: 0;
-      transform: skewY(-30deg);
-    }
-    .chevron:after {
-      right: 0;
-      width: 50%;
-      transform: skewY(30deg);
-    }
-    @keyframes move-chevron {
-      25% {
-        opacity: 1;
-      }
-      33.3% {
-        opacity: 1;
-        transform: translateY(-$base * 3.8);
-      }
-      66.6% {
-        opacity: 1;
-        transform: translateY(-$base * 5.2);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-$base * 8) scale(0.5);
-      }
-    }
   }
 
-  .deposited-and-iphone {
-    margin-top: 2em;
-  }
   .deposit-and-withdraw {
     margin-top: 3em;
+    .ant-btn-primary:hover,
+    .ant-btn-primary:focus {
+      background: linear-gradient(90deg, #5361ca 0%, #0d78f8 100%);
+      border-color: #0d78f8;
+    }
+    .ant-btn:hover,
+    .ant-btn:focus {
+      background: linear-gradient(90deg, #5361ca 0%, #0d78f8 100%);
+      border-color: #5361ca;
+    }
   }
 }
 
@@ -105,5 +58,88 @@ $base: 0.6rem;
 }
 
 .bt-width {
-  width: 80% !important;
+  background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%);
+  width: 85% !important;
+  height: 6vh !important;
+  font-size: 4vw !important;
+  border-radius: 20px !important;
+}
+
+.bt-width:hover {
+  background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%);
+}
+
+.flex_between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stake_header {
+  position: absolute;
+  background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%);
+  width: 100%;
+  height: 6vh;
+  top: 0;
+  img {
+    height: 3.7vh;
+    opacity: 0.6;
+  }
+}
+
+.phone_info {
+  margin-top: 6vh;
+  width: 100%;
+}
+
+.w50 {
+  margin: 1vh 3vw;
+  width: 50%;
+}
+
+.phoneicon {
+  margin-right: 2vw;
+  img {
+    width: 10vh;
+    height: 10vh;
+  }
+}
+
+.phone_font {
+  margin: 0;
+  font-size: 6vw;
+  text-align: left;
+  height: 4.7vh;
+}
+
+.phonefarm_font {
+  color: #858585;
+  text-align: left;
+  font-size: 3.2vw;
+}
+
+.number_font {
+  margin: 0;
+  height: 8vh;
+  font-size: 12vw;
+  text-align: right;
+}
+
+.balance_font {
+  color: #858585;
+  text-align: right;
+  font-size: 3.2vw;
+}
+
+.ant-tabs-nav {
+  background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%);
+}
+
+.ant-tabs-tab .ant-tabs-tab-btn {
+  color: white !important;
+  margin-left: 2vw;
+  font-size: 4vw;
+  height: 2vh !important;
+  display: flex;
+  align-items: center;
 }

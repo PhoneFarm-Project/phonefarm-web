@@ -17,6 +17,9 @@ import {
   setTokenLocked,
 } from 'store/actions';
 
+import PhoneFarm from 'assets/images/logo.png';
+import PhoneIcon from 'assets/icons/phoneFarm-logo-128.png';
+import DaiIcon from 'assets/icons/dai-icon.png';
 import './style.scss';
 
 const { TabPane } = Tabs;
@@ -33,6 +36,7 @@ function Stake() {
 
   let [poolSelected, setPoolSelected] = useState(0);
   let [apy, setApy] = useState(0);
+  const [symbol, setSymbol] = useState(null);
 
   const pendingIPhone = useSelector((state) => state.pendingIPhone);
   const tokenAllowance = useSelector((state) => state.tokenAllowance);
@@ -41,6 +45,7 @@ function Stake() {
   const pools = useSelector((state) => state.pools);
   const tokenLocked = useSelector((state) => state.tokenLocked);
   const chainId = useSelector((state) => state.chainId);
+  const tokenBal = useSelector((state) => state.tokenBal);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -55,6 +60,10 @@ function Stake() {
   useEffect(() => {
     tokenAllowance[poolSelected] > 0 ? setStatusDeposit(false) : setStatusDeposit(true);
   }, [poolSelected, tokenAllowance]);
+
+  useEffect(() => {
+    if (!!pools[poolSelected]) setSymbol(getSymbol(chainId, pools[poolSelected].lpToken));
+  }, [chainId, pools, poolSelected]);
 
   useEffect(() => {
     let getApy = async () => {
@@ -74,51 +83,86 @@ function Stake() {
   }, 15000);
 
   return (
-    <Layout className='styleStake stake'>
-      <ButtonBack url='/home?preset=moveToRightFromLeft' />
-      <div className='boxStake'>
-        <h4>
-          ( <b>APY</b> {apy} )
-        </h4>
-        <div className='arrow-top'>
-          <div className='chevron'></div>
-          <div className='chevron'></div>
-          <div className='chevron'></div>
+    <Layout className='styleStake stake audio_font'>
+      <div className='stake_header flex_between'>
+        <div>
+          <ButtonBack
+            url='/home?preset=moveToRightFromLeft'
+            size='small'
+            color={{ color: 'white' }}
+          />
         </div>
+        <img src={PhoneFarm} alt='phonefarm' />
+        <div />
+      </div>
 
-        <Tabs defaultActiveKey='0' onChange={selectPool}>
-          {pools.map((e, i) => {
-            return (
-              <TabPane tab={getSymbol(chainId, e.lpToken)} key={i}>
-                <Pool
-                  phoneStake={listTokenStake[i]}
-                  pendingIPhone={pendingIPhone[i]}
-                  token={getSymbol(chainId, e.lpToken)}
-                />
-              </TabPane>
-            );
-          })}
-        </Tabs>
-        <div className='deposit-and-withdraw'>
-          <div className='row'>
-            <div className='col-6'>
-              <DepositModal
-                statusDeposit={statusDeposit}
-                poolSelected={poolSelected}
-                marks={marks}
-                loading={loading}
-                getSymbol={getSymbol}
-                tokenAllowance={tokenAllowance}
-              />
+      <div className='phone_info flex_between'>
+        {!!pools[poolSelected] ? (
+          symbol === 'PHONE' ? (
+            <div className='w50 flex_between'>
+              <div className='phoneicon'>
+                <img src={PhoneIcon} alt='icon phone' />
+              </div>
+              <div>
+                <p className='phone_font'>{symbol}</p>
+                <p className='phonefarm_font'>PhoneFarm</p>
+              </div>
             </div>
-            <div className='col-6'>
-              <WithdrawModal
-                listTokenStake={listTokenStake}
-                poolSelected={poolSelected}
-                marks={marks}
-                loading={loading}
-              />
+          ) : symbol === 'DAI' ? (
+            <div className='w50 flex_between'>
+              <div className='phoneicon'>
+                <img src={DaiIcon} alt='icon phone' />
+              </div>
+              <div>
+                <p className='phone_font'>{symbol}</p>
+                <p className='phonefarm_font'>PhoneFarm</p>
+              </div>
             </div>
+          ) : (
+            <></>
+          )
+        ) : (
+          <></>
+        )}
+        <div className='w50'>
+          <p className='number_font'>{tokenBal[poolSelected]}</p>
+          <p className='balance_font'>balance</p>
+        </div>
+      </div>
+
+      <Tabs defaultActiveKey='0' onChange={selectPool}>
+        {pools.map((e, i) => {
+          return (
+            <TabPane tab={getSymbol(chainId, e.lpToken)} key={i}>
+              <Pool
+                phoneStake={listTokenStake[i]}
+                pendingIPhone={pendingIPhone[i]}
+                token={getSymbol(chainId, e.lpToken)}
+                apy={apy}
+              />
+            </TabPane>
+          );
+        })}
+      </Tabs>
+      <div className='deposit-and-withdraw'>
+        <div className='row'>
+          <div className='col-6'>
+            <DepositModal
+              statusDeposit={statusDeposit}
+              poolSelected={poolSelected}
+              marks={marks}
+              loading={loading}
+              getSymbol={getSymbol}
+              tokenAllowance={tokenAllowance}
+            />
+          </div>
+          <div className='col-6'>
+            <WithdrawModal
+              listTokenStake={listTokenStake}
+              poolSelected={poolSelected}
+              marks={marks}
+              loading={loading}
+            />
           </div>
         </div>
       </div>
