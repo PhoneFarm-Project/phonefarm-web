@@ -17,7 +17,8 @@ export default function OwnedDevice({ iPhone, loading, preview, currentLayout })
       </Col>
       <Col className='center' span={16}>
         <p className='ip_font price_font'>
-          <strong>{parseBalance(iPhone.price)}</strong> <img src={IphoneIcon} alt='token icon' />
+          <strong>{parseBalance(iPhone.price, 18)}</strong>{' '}
+          <img src={IphoneIcon} alt='token icon' />
         </p>
         <p className='ip_font product_name_font'>
           {iPhone.model} {iPhone.color}

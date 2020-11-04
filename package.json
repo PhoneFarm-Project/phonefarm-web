@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.6.6",
     "bootstrap": "^4.5.2",
+    "ethers": "^5.0.19",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
