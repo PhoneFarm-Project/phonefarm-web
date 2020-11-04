@@ -31,5 +31,8 @@ export async function getAPY(chainId, pools, poolSelected, tokenLocked) {
     (iPhonePrice * (totalSecInYear / blockTime) * iPhonePerBlock * pools[poolSelected].allocPoint) /
     totalAllocPoint;
   let apy = valueIPhoneEarn / valueLocked;
+  if (!isFinite(apy)) {
+    apy = 'Not available';
+  }
   return apy;
 }

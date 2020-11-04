@@ -80,7 +80,7 @@ function Stake() {
 
   useInterval(() => {
     dispatch(setPendingIPhone());
-  }, 15000);
+  }, 5000);
 
   return (
     <Layout className='styleStake stake audio_font'>

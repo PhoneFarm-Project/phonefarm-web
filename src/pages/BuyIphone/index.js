@@ -26,16 +26,19 @@ export default function BuyIphone() {
   const [listColorModel, setListColorModel] = useState([]);
   const dispatch = useDispatch();
   let isApproved = iPhoneAllowance > 0;
-
   useEffect(() => {
     dispatch(setAllDevices());
     dispatch(setIPhoneAllowance());
     dispatch(setIPhoneBal());
   }, [dispatch]);
-
+  /* eslint-disable react-hooks/exhaustive-deps*/
   useEffect(() => {
     if (allDevices.length > 0) {
-      setCurrentPhone(allDevices[allDevices.length - 1]);
+      if (!currentPhone) {
+        setCurrentPhone(allDevices[allDevices.length - 1]);
+        updateCurrent(allDevices[allDevices.length - 1].model);
+      }
+
       let arryModel = [];
       allDevices.forEach((phone) => {
         if (!arryModel.includes(phone.model)) {
@@ -61,7 +64,7 @@ export default function BuyIphone() {
 
   const handleBuyDevice = (id, price) => {
     if (parseInt(iPhoneBal) < parseInt(price)) {
-      alert('insufficient IPH token');
+      alert('insufficient IPHONE token');
     } else {
       dispatch(buyDevice(id));
     }

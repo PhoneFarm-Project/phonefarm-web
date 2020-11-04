@@ -119,7 +119,7 @@ export const setPendingIPhone = () => async (dispatch, getState) => {
     let pendingIPhone = [];
     for (let i = 0; i < poolLength; i++) {
       let pending = await factoryInstance.methods.pendingIPhone(i, walletAddress).call();
-      pendingIPhone.push(parseBalance(pending));
+      pendingIPhone.push(parseInt(parseBalance(pending)));
     }
     dispatch({ type: SET_PENDING_IPHONE, pendingIPhone });
   } catch (e) {
@@ -278,30 +278,33 @@ export const setIPhoneAllowance = () => async (dispatch, getState) => {
 export const SET_OWNED_DEVICES = 'SET_OWNED_DEVICES';
 export const setOwnedDevices = () => async (dispatch, getState) => {
   let state = getState();
-  dispatch(setLoading(true));
+  let ownedDevices = state.ownedDevices;
+  if (!ownedDevices.length) {
+    dispatch(setLoading(true));
+  }
   const walletAddress = state.walletAddress;
   const devicesInstance = state.devicesInstance;
   try {
     let ownedDevicesIds = await devicesInstance.methods.getOwnedDevices(walletAddress).call();
     let ownedDevices = [];
-    for (let i = 0; i < ownedDevicesIds.length; i++) {
-      let device = {};
-      let deviceInfo = await devicesInstance.methods.getSpecsById(ownedDevicesIds[i]).call();
-      let totalSupply = await devicesInstance.methods.totalSupply(ownedDevicesIds[i]).call();
-      let maxSupply = await devicesInstance.methods.maxSupply(ownedDevicesIds[i]).call();
-      let balance = await devicesInstance.methods
-        .balanceOf(walletAddress, ownedDevicesIds[i])
-        .call();
-      device.id = ownedDevicesIds[i];
-      device.totalSupply = totalSupply;
-      device.maxSupply = maxSupply;
-      device.model = deviceInfo.model;
-      device.color = deviceInfo.color;
-      device.price = deviceInfo.price;
-      device.others = deviceInfo.others;
-      device.balance = balance;
-      ownedDevices.push(device);
-    }
+    ownedDevices = await Promise.all(
+      ownedDevicesIds.map(async (i) => {
+        let device = {};
+        let deviceInfo = await devicesInstance.methods.getSpecsById(i).call();
+        let totalSupply = await devicesInstance.methods.totalSupply(i).call();
+        let maxSupply = await devicesInstance.methods.maxSupply(i).call();
+        let balance = await devicesInstance.methods.balanceOf(walletAddress, i).call();
+        device.id = i;
+        device.totalSupply = totalSupply;
+        device.maxSupply = maxSupply;
+        device.model = deviceInfo.model;
+        device.color = deviceInfo.color;
+        device.price = deviceInfo.price;
+        device.others = deviceInfo.others;
+        device.balance = balance;
+        return device;
+      })
+    );
     dispatch({ type: SET_OWNED_DEVICES, ownedDevices });
     dispatch(setLoading(false));
   } catch (e) {
@@ -313,25 +316,31 @@ export const setOwnedDevices = () => async (dispatch, getState) => {
 export const SET_ALL_DEVICES = 'SET_ALL_DEVICES';
 export const setAllDevices = () => async (dispatch, getState) => {
   let state = getState();
-  dispatch(setLoading(true));
   const devicesInstance = state.devicesInstance;
+  const devices = state.allDevices;
+  if (!devices.length) {
+    dispatch(setLoading(true));
+  }
   try {
     let currentTokenId = await devicesInstance.methods.getCurrentTokenId().call();
     let allDevices = [];
-    for (let i = 1; i < currentTokenId; i++) {
-      let device = {};
-      let deviceInfo = await devicesInstance.methods.getSpecsById(i).call();
-      let totalSupply = await devicesInstance.methods.totalSupply(i).call();
-      let maxSupply = await devicesInstance.methods.maxSupply(i).call();
-      device.id = i;
-      device.totalSupply = totalSupply;
-      device.maxSupply = maxSupply;
-      device.model = deviceInfo.model;
-      device.color = deviceInfo.color;
-      device.price = deviceInfo.price;
-      device.others = deviceInfo.others;
-      allDevices.push(device);
-    }
+    let listTokenId = Array.from({ length: currentTokenId - 1 }, (_, i) => i + 1);
+    allDevices = await Promise.all(
+      listTokenId.map(async (i) => {
+        let device = {};
+        let deviceInfo = await devicesInstance.methods.getSpecsById(i).call();
+        let totalSupply = await devicesInstance.methods.totalSupply(i).call();
+        let maxSupply = await devicesInstance.methods.maxSupply(i).call();
+        device.id = i;
+        device.totalSupply = totalSupply;
+        device.maxSupply = maxSupply;
+        device.model = deviceInfo.model;
+        device.color = deviceInfo.color;
+        device.price = deviceInfo.price;
+        device.others = deviceInfo.others;
+        return device;
+      })
+    );
     dispatch({ type: SET_ALL_DEVICES, allDevices });
     dispatch(setLoading(false));
   } catch (error) {
