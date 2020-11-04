@@ -21,6 +21,11 @@ const initialState = {
   poolLength: 0,
   pools: [],
   tokenLocked: [],
+  phoneBalance: 0,
+  addressPhoneToken: null,
+  rate: 1,
+  tokensPresale: [],
+  erc20Allowances: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -124,6 +129,31 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         tokenLocked: action.tokenLocked,
+      };
+    case actions.SET_ADDRESS_PHONE_TOKEN:
+      return {
+        ...state,
+        addressPhoneToken: action.addressPhoneToken,
+      };
+    case actions.SET_PHONE_BALANCE:
+      return {
+        ...state,
+        phoneBalance: action.phoneBalance,
+      };
+    case actions.SET_TOKENS_PRESALE:
+      return {
+        ...state,
+        tokensPresale: action.tokensPresale,
+      };
+    case actions.SET_ALLOWANCE_ERC20:
+      return {
+        ...state,
+        erc20Allowances: action.erc20Allowances,
+      };
+    case actions.SET_RATE:
+      return {
+        ...state,
+        rate: action.rate,
       };
     default:
       return state;

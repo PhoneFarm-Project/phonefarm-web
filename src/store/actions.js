@@ -5,7 +5,11 @@ import IPhoneToken from 'contracts/IPhoneToken.json';
 import Store from 'contracts/Store.json';
 import Devices from 'contracts/Devices.json';
 import { parseBalance } from 'utils/helper';
+import { getTokensPresale, getDecimals } from 'utils/getTokensPresale';
 import { getContractAddress } from 'utils/getContractAddress';
+import { message } from 'antd';
+import ethers from 'ethers';
+
 var contractAddress;
 
 export const SET_WEB3 = 'SET_WEB3';
@@ -23,6 +27,7 @@ export const setWeb3 = (web3) => (dispatch, getState) => {
   dispatch(setSale(saleInstance));
   dispatch(setStore(storeInstance));
   dispatch(setDevices(devicesInstance));
+  dispatch(setAddressPhoneToken());
 };
 
 export const SET_CHAINID = 'SET_CHAINID';
@@ -43,7 +48,7 @@ export const SET_BALANCE = 'SET_BALANCE';
 export const setBalance = () => async (dispatch, getState) => {
   let { web3, walletAddress } = getState();
   let balance;
-  if (walletAddress !== null) balance = parseBalance(await web3.eth.getBalance(walletAddress));
+  if (walletAddress !== null) balance = parseBalance(await web3.eth.getBalance(walletAddress), 18);
   else balance = 0;
   dispatch({
     type: SET_BALANCE,
@@ -57,8 +62,15 @@ export const setFactory = (factoryInstance) => (dispatch) => {
 };
 
 export const SET_SALE = 'SET_SALE';
-export const setSale = (saleInstance) => (dispatch) => {
+export const setSale = (saleInstance) => async (dispatch) => {
+  let rate = await saleInstance.methods.rate().call();
+  dispatch(setRate(rate));
   dispatch({ type: SET_SALE, saleInstance });
+};
+
+export const SET_RATE = 'SET_RATE';
+export const setRate = (rate) => (dispatch) => {
+  dispatch({ type: SET_RATE, rate });
 };
 
 export const SET_STORE = 'SET_STORE';
@@ -387,18 +399,21 @@ export const buyDevice = (_id) => async (dispatch, getState) => {
   }
 };
 
-export const buyTokenPhone = (amount) => async (dispatch, getState) => {
+export const buyTokenPhoneByETH = (amount) => async (dispatch, getState) => {
   let state = getState();
-  const { web3, walletAddress } = state;
-  const saleInstance = state.saleInstance;
+  const { web3, walletAddress, saleInstance } = state;
   const weiValue = web3.utils.toWei(amount.toString(), 'ether');
   dispatch(setLoading(true));
   try {
-    await saleInstance.methods.buyTokenPhone().send({ from: walletAddress, value: weiValue });
+    await saleInstance.methods.buyByETH().send({ from: walletAddress, value: weiValue });
     dispatch(setLoading(false));
+    dispatch(setAllowancesERC20());
+    dispatch(setPhoneBalance());
+    message.success('Buy Success!');
   } catch (e) {
     dispatch(setLoading(false));
     console.error(e);
+    message.error('Buy Error!');
     return e;
   }
 };
@@ -418,5 +433,109 @@ export const setTokenLocked = () => async (dispatch, getState) => {
     dispatch({ type: SET_TOKEN_LOCKED, tokenLocked });
   } catch (e) {
     console.error(e);
+  }
+};
+
+export const approveTokenERC = (_addressERC) => async (dispatch, getState) => {
+  let state = getState();
+  const walletAddress = state.walletAddress;
+  const web3 = state.web3;
+  dispatch(setLoading(true));
+  try {
+    let tokenInstance = new web3.eth.Contract(PhoneToken.abi, _addressERC);
+    await tokenInstance.methods
+      .approve(
+        contractAddress.saleAddress,
+        '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'
+      )
+      .send({ from: walletAddress });
+    await dispatch(setAllowancesERC20());
+    dispatch(setLoading(false));
+  } catch (e) {
+    dispatch(setLoading(false));
+    console.error(e);
+  }
+};
+
+export const SET_ADDRESS_PHONE_TOKEN = 'SET_ADDRESS_PHONE_TOKEN';
+export const setAddressPhoneToken = () => async (dispatch, getState) => {
+  let { chainId } = getState();
+  let addressPhoneToken = getContractAddress(chainId).phoneTokenAddress;
+  dispatch({ type: SET_ADDRESS_PHONE_TOKEN, addressPhoneToken });
+};
+
+export const SET_PHONE_BALANCE = 'SET_PHONE_BALANCE';
+export const setPhoneBalance = () => async (dispatch, getState) => {
+  let state = getState();
+  const { walletAddress, addressPhoneToken } = state;
+  const web3 = state.web3;
+  try {
+    const PhoneInstance = new web3.eth.Contract(PhoneToken.abi, addressPhoneToken);
+    let phoneBalance = parseBalance(
+      await PhoneInstance.methods.balanceOf(walletAddress).call(),
+      18
+    );
+    dispatch({ type: SET_PHONE_BALANCE, phoneBalance });
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+export const SET_TOKENS_PRESALE = 'SET_TOKENS_PRESALE';
+export const setTokensPresale = () => async (dispatch, getState) => {
+  let { chainId } = getState();
+  let tokensPresale = getTokensPresale(chainId);
+  dispatch({ type: SET_TOKENS_PRESALE, tokensPresale });
+};
+
+export const SET_ALLOWANCE_ERC20 = 'SET_ALLOWANCE_ERC20';
+export const setAllowancesERC20 = () => async (dispatch, getState) => {
+  const { web3, walletAddress, tokensPresale } = getState();
+  try {
+    let erc20Allowances = [];
+    for (let i = 0; i < tokensPresale.length; i++) {
+      if (tokensPresale[i].symbol !== 'ETH') {
+        let tokenInstance = new web3.eth.Contract(PhoneToken.abi, tokensPresale[i].address);
+        let allowance = await tokenInstance.methods
+          .allowance(walletAddress, contractAddress.saleAddress)
+          .call();
+        let balanceERC = await tokenInstance.methods.balanceOf(walletAddress).call();
+        erc20Allowances[tokensPresale[i].address] = {
+          allowance: parseBalance(allowance, tokensPresale[i].decimals),
+          balance: parseBalance(balanceERC, tokensPresale[i].decimals),
+        };
+      }
+    }
+    let balance = parseBalance(await web3.eth.getBalance(walletAddress), 18);
+    erc20Allowances['0'] = {
+      allowance: 10e18,
+      balance,
+    };
+    dispatch({ type: SET_ALLOWANCE_ERC20, erc20Allowances });
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+export const buyTokenPhoneByERC = (_token, _amount) => async (dispatch, getState) => {
+  let state = getState();
+  const { chainId, walletAddress, saleInstance } = state;
+  let decimals = getDecimals(chainId, _token);
+  const decimalsValue = ethers.utils.parseUnits(_amount.toString(), decimals);
+  dispatch(setLoading(true));
+  console.log(saleInstance.methods);
+  try {
+    await saleInstance.methods
+      .buyByERC20(_token, decimalsValue.toHexString())
+      .send({ from: walletAddress });
+    dispatch(setLoading(false));
+    dispatch(setAllowancesERC20());
+    dispatch(setPhoneBalance());
+    message.success('Buy Success!');
+  } catch (e) {
+    dispatch(setLoading(false));
+    message.error('Buy Error!');
+    console.error(e);
+    return e;
   }
 };

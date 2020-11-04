@@ -14,10 +14,10 @@ export const connectMetaMask = async () => {
   const web3 = new Web3(window.ethereum);
   let chainId = await web3.eth.net.getId();
 
-  if (chainId === 1 || chainId === 3 || chainId === 4) {
+  if (chainId === 1 || chainId === 4) {
     store.dispatch(setChainId(chainId));
   } else {
-    alert('Please change to Ropsten testnet, Rinkeby testnet or Mainnet');
+    alert('Please change to Mainnet or Rinkeby testnet');
   }
 
   if (provider) {
