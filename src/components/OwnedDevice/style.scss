@@ -3,10 +3,8 @@ $height: 30vh;
   margin-bottom: 5vh !important;
 }
 
-.ip_product_image {
-  height: $height;
-  width: $height * 0.7;
-  padding: 2vh;
+.my_ip {
+  width: 90%;
 }
 
 .center {
@@ -25,14 +23,17 @@ $height: 30vh;
 }
 
 .price_font {
+  font-size: 4vw;
+  display: flex;
+  align-items: center;
   strong {
     font-size: 6vw;
     margin-top: 1%;
   }
-  font-size: 4vw;
   img {
-    height: 20px;
-    width: 20;
+    height: 5vw;
+    width: 5vw;
+    margin-left: 1vw;
   }
 }
 

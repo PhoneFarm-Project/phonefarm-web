@@ -27,30 +27,32 @@ export default function IphoneCollection() {
   };
   return (
     <div className='styleStake scroll_able'>
-      <ButtonBack url='/home?preset=moveToRightFromLeft' text='Home' />
-      <Spin indicator={antIcon} spinning={loading} className='spin-center-screen'>
-        <p className='ip_font head_font'>Your iPhone Collection</p>
-        {!loading && ownedDevices.length <= 0 ? (
-          <Empty
-            image={Empty.PRESENTED_IMAGE_SIMPLE}
-            description='No device'
-            className='stye-empty-box'
-          />
-        ) : null}
-
-        {ownedDevices.map((iPhone, index) => {
-          // if (iphone.status !== 0)
-          return (
-            <OwnedDevice
-              iPhone={iPhone}
-              preview={preview}
-              key={index}
-              currentLayout={currentLayout}
+      <div className='phone_header flex_between'>
+        <ButtonBack url='/home?preset=moveToRightFromLeft' text='Home' />
+      </div>
+      <div className='phone_body'>
+        <Spin indicator={antIcon} spinning={loading} className='spin-center-screen'>
+          <p className='ip_font head_font'>Your iPhone Collection</p>
+          {!loading && ownedDevices.length <= 0 ? (
+            <Empty
+              image={Empty.PRESENTED_IMAGE_SIMPLE}
+              description='No device'
+              className='stye-empty-box'
             />
-          );
-          // else return <div key={index}></div>;
-        })}
-      </Spin>
+          ) : null}
+
+          {ownedDevices.map((iPhone, index) => {
+            return (
+              <OwnedDevice
+                iPhone={iPhone}
+                preview={preview}
+                key={index}
+                currentLayout={currentLayout}
+              />
+            );
+          })}
+        </Spin>
+      </div>
     </div>
   );
 }

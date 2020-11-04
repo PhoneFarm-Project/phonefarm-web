@@ -22,10 +22,11 @@ $screen-radius: $phone-height/18.8;
 .lock_area {
   position: absolute;
   top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $screen-width;
+  width: 100%;
   height: $screen-heght/2.5;
   flex-direction: column;
 }

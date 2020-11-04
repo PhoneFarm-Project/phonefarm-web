@@ -17,7 +17,7 @@ function Home() {
   return (
     <Layout className='styleHome'>
       <div className='row'>
-        <div className='col-3'>
+        <div className='col-3 pd-none'>
           <Link
             className='ant-btn ant-btn-dashed btn-icon'
             to='/buy-Iphone?preset=moveToLeftFromRight'
@@ -26,7 +26,7 @@ function Home() {
           </Link>
           <p className='app-name'>NFT Store</p>
         </div>
-        <div className='col-3'>
+        <div className='col-3 pd-none'>
           <Link
             className='ant-btn ant-btn-dashed btn-icon'
             to='/buy-Phone?preset=moveToLeftFromRight'
@@ -36,7 +36,7 @@ function Home() {
           </Link>
           <p className='app-name'>Token Store</p>
         </div>
-        <div className='col-3'>
+        <div className='col-3 pd-none'>
           <Link
             className='ant-btn ant-btn-dashed btn-icon'
             to='/collection?preset=moveToLeftFromRight'
@@ -45,7 +45,7 @@ function Home() {
           </Link>
           <p className='app-name'>Collection</p>
         </div>
-        <div className='col-3'>
+        <div className='col-3 pd-none'>
           <Link
             className='ant-btn ant-btn-dashed btn-icon'
             style={{ background: 'rgb(4,148,130,0.76)' }}

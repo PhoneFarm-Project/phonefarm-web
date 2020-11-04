@@ -23,10 +23,7 @@ export default function IphoneProduct({
           alt='icon'
         />
       </div>
-      <div className='center'>
-        {/* <p className='ip_font product_name_font'>
-          iPhone {iPhone.model} {iPhone.color}
-        </p> */}
+      <div className='center ip_font'>
         <p className='quantity'>
           MINTED: {iPhone.totalSupply} | <b>{iPhone.maxSupply - iPhone.totalSupply} LEFT</b>
         </p>
@@ -48,10 +45,10 @@ export default function IphoneProduct({
             );
           })}
         </Row>
-        <p className='ip_font price_font'>Price: {iPhone.price / 10 ** 18} IPHONE</p>
+        <p className='price_font'>Price: {iPhone.price / 10 ** 18} IPHONE</p>
         {isApproved ? (
           <Button
-            className='product_bt ip_font'
+            className='product_bt'
             onClick={() => buyDevice()}
             disabled={hiddenBtn}
             loading={loading}
@@ -59,7 +56,7 @@ export default function IphoneProduct({
             Buy
           </Button>
         ) : (
-          <Button className='product_bt ip_font' onClick={() => approveIPhone()} loading={loading}>
+          <Button className='product_bt' onClick={() => approveIPhone()} loading={loading}>
             Approve IPHONE
           </Button>
         )}

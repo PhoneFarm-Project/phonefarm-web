@@ -5,7 +5,6 @@ $height: 20vh;
 
 .ip_product_image {
   height: $height;
-  width: $height * 0.63;
   padding: 2vh;
 }
 
@@ -18,10 +17,6 @@ $height: 20vh;
 
 .head_font {
   font-size: 8vw;
-}
-
-.product_name_font {
-  font-size: 6vw;
 }
 
 .price_font {

@@ -67,7 +67,7 @@ function PhoneLayout() {
           </div>
           {!walletAddress ? (
             <img
-              className='phone_header'
+              className='phone_notch'
               src={layout.layout}
               alt='iphone head'
               onClick={() => connect()}

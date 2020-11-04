@@ -84,7 +84,7 @@ function Stake() {
 
   return (
     <Layout className='styleStake stake audio_font'>
-      <div className='stake_header flex_between'>
+      <div className='phone_header flex_between'>
         <div className='w32px'>
           <ButtonBack url='/home?preset=moveToRightFromLeft' size='small' />
         </div>
@@ -92,10 +92,10 @@ function Stake() {
         <div className='w32px' />
       </div>
 
-      <div className='phone_info flex_between'>
+      <div className='phone_body flex_between'>
         {!!pools[poolSelected] ? (
           symbol === 'PHONE' ? (
-            <div className='w50 flex_between'>
+            <div className='w50 flex'>
               <div className='phoneicon'>
                 <img src={PhoneIcon} alt='icon phone' />
               </div>
@@ -105,7 +105,7 @@ function Stake() {
               </div>
             </div>
           ) : symbol === 'DAI' ? (
-            <div className='w50 flex_between'>
+            <div className='w50 flex'>
               <div className='phoneicon'>
                 <img src={DaiIcon} alt='icon phone' />
               </div>
