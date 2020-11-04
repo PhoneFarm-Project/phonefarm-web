@@ -1,11 +1,11 @@
 $phone-height: 100vh;
 
 .iphone3 {
+  .default_layout {
+    width: ($phone-height/19.5) * 8.6;
+    height: $phone-height * 0.665;
+  }
   .content_box {
-    .default_layout {
-      width: ($phone-height/19.5) * 8.6;
-      height: $phone-height * 0.665;
-    }
     .style_iframe {
       width: ($phone-height/19.5) * 8.6;
       height: $phone-height * 0.665;
@@ -18,11 +18,11 @@ $phone-height: 100vh;
 }
 
 .iphone4 {
+  .default_layout {
+    width: ($phone-height/19.5) * 8.7;
+    height: $phone-height * 0.65;
+  }
   .content_box {
-    .default_layout {
-      width: ($phone-height/19.5) * 8.7;
-      height: $phone-height * 0.65;
-    }
     .style_iframe {
       width: ($phone-height/19.5) * 8.7;
       height: $phone-height * 0.636;
@@ -35,13 +35,13 @@ $phone-height: 100vh;
 }
 
 .iphone5 {
+  .default_layout {
+    position: absolute;
+    width: ($phone-height/19.5) * 8.3;
+    height: $phone-height * 0.7;
+    left: 5.1vh;
+  }
   .content_box {
-    .default_layout {
-      position: absolute;
-      width: ($phone-height/19.5) * 8.3;
-      height: $phone-height * 0.7;
-      left: 5.1vh;
-    }
     .style_iframe {
       width: ($phone-height/19.5) * 8.2;
       height: $phone-height * 0.7;
@@ -68,11 +68,11 @@ $phone-height: 100vh;
 }
 
 .iphone8 {
+  .default_layout {
+    width: ($phone-height/19.5) * 8.8;
+    height: $phone-height * 0.75;
+  }
   .content_box {
-    .default_layout {
-      width: ($phone-height/19.5) * 8.8;
-      height: $phone-height * 0.75;
-    }
     .style_iframe {
       width: ($phone-height/19.5) * 8.8;
       height: $phone-height * 0.75;
@@ -85,12 +85,12 @@ $phone-height: 100vh;
 }
 
 .iphoneX {
+  .default_layout {
+    width: ($phone-height/19.5) * 8.78;
+    height: $phone-height * 0.85;
+    border-radius: $phone-height * 0.1;
+  }
   .content_box {
-    .default_layout {
-      width: ($phone-height/19.5) * 8.78;
-      height: $phone-height * 0.85;
-      border-radius: $phone-height * 0.1;
-    }
     .style_iframe {
       width: ($phone-height/19.5) * 8.78;
       height: $phone-height * 0.85;
@@ -106,11 +106,11 @@ $phone-height: 100vh;
 }
 
 .iphone11 {
+  .default_layout {
+    width: ($phone-height/19.5) * 8.4;
+    height: $phone-height * 0.85;
+  }
   .content_box {
-    .default_layout {
-      width: ($phone-height/19.5) * 8.4;
-      height: $phone-height * 0.85;
-    }
     .style_iframe {
       width: ($phone-height/19.5) * 8.5;
       height: $phone-height * 0.85;
@@ -123,12 +123,12 @@ $phone-height: 100vh;
 }
 
 .iphoneXS {
+  .default_layout {
+    height: $phone-height * 0.858;
+    width: ($phone-height/19.5) * 8.67;
+    border-radius: $phone-height * 0.1;
+  }
   .content_box {
-    .default_layout {
-      height: $phone-height * 0.858;
-      width: ($phone-height/19.5) * 8.67;
-      border-radius: $phone-height * 0.1;
-    }
     .style_iframe {
       width: ($phone-height/19.5) * 8.67;
       height: $phone-height * 0.884;
@@ -146,11 +146,11 @@ $phone-height: 100vh;
 }
 
 .iphoneSE2 {
+  .default_layout {
+    width: ($phone-height/19.5) * 8.5;
+    height: $phone-height * 0.7;
+  }
   .content_box {
-    .default_layout {
-      width: ($phone-height/19.5) * 8.5;
-      height: $phone-height * 0.7;
-    }
     .style_iframe {
       width: ($phone-height/19.5) * 8.8;
       height: $phone-height * 0.755;
@@ -162,12 +162,12 @@ $phone-height: 100vh;
 }
 
 .iphoneXR {
+  .default_layout {
+    width: ($phone-height/19.5) * 8.65;
+    height: $phone-height * 0.858;
+    border-radius: $phone-height * 0.1;
+  }
   .content_box {
-    .default_layout {
-      width: ($phone-height/19.5) * 8.65;
-      height: $phone-height * 0.858;
-      border-radius: $phone-height * 0.1;
-    }
     .style_iframe {
       width: ($phone-height/19.5) * 8.65;
       height: $phone-height * 0.88;
@@ -189,22 +189,22 @@ $phone-height: 100vh;
 }
 
 .iphone12Mini {
+  .default_layout {
+    width: ($phone-height/19.5) * 9.3;
+    height: $phone-height * 0.95;
+    border-radius: $phone-height/30;
+  }
   .content_box {
-    .default_layout {
-      width: ($phone-height/19.5) * 9;
-      height: $phone-height * 0.86;
-      border-radius: $phone-height/30;
-    }
     .style_iframe {
-      width: ($phone-height/19.5) * 9;
+      width: ($phone-height/19.5) * 8.9;
       height: $phone-height * 0.86;
-      border-radius: $phone-height/30;
     }
     .lock {
       height: 80%;
       .screen_size {
-        height: $phone-height * 0.95;
-        width: ($phone-height/19.5) * 9.6;
+        height: $phone-height * 0.98;
+        width: ($phone-height/19.5) * 9.7;
+        border-radius: $phone-height/10;
       }
     }
   }

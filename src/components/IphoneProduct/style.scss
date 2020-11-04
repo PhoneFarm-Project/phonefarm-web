@@ -36,7 +36,7 @@ $height: 20vh;
 
 .product-style {
   margin-top: 4vh !important;
-  min-height: 70vh;
+  min-height: 45vh;
 }
 
 .colornav-link:hover {
@@ -94,7 +94,7 @@ $height: 20vh;
 
 .colornav-link .colornav-label,
 .colornav-value:checked ~ .colornav-link .colornav-label {
-  font-size: 11px;
+  font-size: 15px;
   line-height: 1;
   font-weight: 400;
   letter-spacing: -0.008em;
@@ -127,5 +127,5 @@ button:focus {
 }
 
 .quantity {
-  font-size: 0.6em;
+  font-size: 1.5vh;
 }

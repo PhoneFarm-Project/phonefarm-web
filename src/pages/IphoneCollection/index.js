@@ -28,7 +28,7 @@ export default function IphoneCollection() {
   return (
     <div className='styleStake scroll_able'>
       <div className='phone_header flex_between'>
-        <ButtonBack url='/home?preset=moveToRightFromLeft' text='Home' />
+        <ButtonBack url='/home?preset=moveToRightFromLeft' />
       </div>
       <div className='phone_body'>
         <Spin indicator={antIcon} spinning={loading} className='spin-center-screen'>

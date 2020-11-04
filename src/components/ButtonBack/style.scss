@@ -1,5 +1,5 @@
 .box-btn-back {
-  background-color: #f0f2f5;
+  background-color: transparent;
 
   .ant-btn {
     display: flex;
@@ -11,6 +11,19 @@
   .link-btn-back {
     left: 0;
     text-decoration: none;
+    .btn-back {
+      color: white;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+      img {
+        width: 6vw;
+        height: 3vw;
+      }
+    }
   }
 }
 

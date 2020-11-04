@@ -1,21 +1,12 @@
 import React from 'react';
-import { Button } from 'antd';
 import getIphoneLayout from 'utils/getIphoneLayout';
-import './style.scss';
 import { Col, Row } from 'reactstrap';
+import TokenIphone from 'assets/icons/Iphone-token-128.png';
+import './style.scss';
 
-export default function IphoneProduct({
-  iPhone,
-  hiddenBtn,
-  buyDevice,
-  approveIPhone,
-  loading,
-  isApproved,
-  listColorModel,
-  changeCurrentPhone,
-}) {
+export default function IphoneProduct({ iPhone, listColorModel, changeCurrentPhone }) {
   return (
-    <div className='boxStake product-style'>
+    <div className='product-style'>
       <div span={8}>
         <img
           className='ip_product_image'
@@ -45,21 +36,10 @@ export default function IphoneProduct({
             );
           })}
         </Row>
-        <p className='price_font'>Price: {iPhone.price / 10 ** 18} IPHONE</p>
-        {isApproved ? (
-          <Button
-            className='product_bt'
-            onClick={() => buyDevice()}
-            disabled={hiddenBtn}
-            loading={loading}
-          >
-            Buy
-          </Button>
-        ) : (
-          <Button className='product_bt' onClick={() => approveIPhone()} loading={loading}>
-            Approve IPHONE
-          </Button>
-        )}
+        <p className='price_font'>
+          Price: {iPhone.price / 10 ** 18}{' '}
+          <img className='tokenIcon' src={TokenIphone} alt='iphone token icon' /> IPHONE
+        </p>
       </div>
     </div>
   );

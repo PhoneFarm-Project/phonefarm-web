@@ -65,6 +65,10 @@ button:active {
   height: $phone-height;
 }
 
+.p_abs {
+  position: absolute;
+}
+
 .phone_notch {
   position: absolute;
   width: ($phone-height/19.5) * 10.3;
@@ -76,7 +80,6 @@ button:active {
 .content_box {
   position: absolute;
   display: flex;
-  z-index: 5;
   flex-direction: row;
   justify-content: center;
   align-items: center;

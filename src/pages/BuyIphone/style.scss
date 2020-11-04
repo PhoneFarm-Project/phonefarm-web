@@ -1,0 +1,25 @@
+.flex_justify_content {
+  display: flex;
+  justify-content: center;
+}
+
+.buy_iphone_body {
+  margin-top: 10vh;
+  width: 90%;
+  height: 52vh;
+  padding: 2.5vh;
+  background-color: white;
+  border-radius: 2vh;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  .ant-select-selector {
+    border: 2px solid #2e5cc0 !important;
+    border-radius: 2vh !important;
+    cursor: pointer !important;
+  }
+}
+
+.ship_image {
+  margin-top: 10vh;
+  height: 15vh;
+  width: 15vh;
+}

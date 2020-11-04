@@ -62,7 +62,7 @@ export default function DepositModal({
   return (
     <div>
       <Button
-        className='bt-width'
+        className='bt-liner'
         type='primary'
         shape='round'
         size='large'

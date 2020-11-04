@@ -133,7 +133,7 @@ function BuyPhone() {
   return (
     <Layout className='styleStake buy-phone'>
       <div className='phone_header flex_between'>
-        <ButtonBack url='/home?preset=moveToRightFromLeft' text='Home' />
+        <ButtonBack url='/home?preset=moveToRightFromLeft' />
       </div>
       <div className='page-sale'>
         <div className='offering-content'>

@@ -86,7 +86,7 @@ function Stake() {
     <Layout className='styleStake stake audio_font'>
       <div className='phone_header flex_between'>
         <div className='w32px'>
-          <ButtonBack url='/home?preset=moveToRightFromLeft' size='small' />
+          <ButtonBack url='/home?preset=moveToRightFromLeft' />
         </div>
         <img src={PhoneFarm} alt='phonefarm' />
         <div className='w32px' />

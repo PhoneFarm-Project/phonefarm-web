@@ -46,7 +46,7 @@ export default function WithdrawModal({ listTokenStake, poolSelected, marks, loa
   return (
     <div>
       <Button
-        className='bt-width'
+        className='bt-liner'
         type='primary'
         shape='round'
         size='large'
