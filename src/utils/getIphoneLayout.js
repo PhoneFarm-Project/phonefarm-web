@@ -275,7 +275,7 @@ const iphoneInfo = {
       style: 'iphone5',
       img: iPhone5SGoldImg,
       layout: iPhone5SGold,
-      codeColor: '##F5DDC5',
+      codeColor: '#DFCCB7',
     },
     Silver: {
       style: 'iphone5',
