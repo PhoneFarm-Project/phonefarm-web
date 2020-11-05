@@ -36,3 +36,13 @@
 .pd-none {
   padding: 0 !important;
 }
+
+.scroll_able {
+  overflow: overlay;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll_able::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}

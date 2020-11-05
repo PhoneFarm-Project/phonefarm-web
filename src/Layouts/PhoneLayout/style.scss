@@ -304,3 +304,37 @@ button:active {
     transform: translate(0, 0) scale(1);
   }
 }
+
+.bg_liner {
+  background: linear-gradient(90deg, #2d7bfa 0%, #6064cf 100%) !important;
+}
+
+.bg_liner_buyIphone {
+  height: 17vh;
+  border-radius: 2vh 2vh 0vh 0vh;
+}
+
+.bg_liner_buyPhone {
+  height: 70vh;
+  border-radius: 4vh;
+}
+
+.bg_liner_collection {
+  height: 13vh;
+  border-radius: 7vh;
+}
+
+.bg_w {
+  background-color: white;
+}
+
+.bg_image {
+  background-image: url('../../assets/images/background1.png');
+  background-size: 100% 120% !important;
+}
+
+.bg_stake {
+  margin-top: 10vh;
+  height: 85vh;
+  border-radius: 4vh;
+}

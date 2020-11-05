@@ -29,19 +29,6 @@ $phone-height: 99vh;
   border-radius: $phone-height/30;
 }
 
-.bg_liner {
-  background: linear-gradient(90deg, #2d7bfa 0%, #6064cf 100%) !important;
-}
-
-.bg_liner_buyIphone {
-  height: 17vh;
-  border-radius: 2vh 2vh 0vh 0vh;
-}
-
-.bg_w {
-  background-color: white;
-}
-
 .open_a {
   animation: zoomin 0.5s;
 }

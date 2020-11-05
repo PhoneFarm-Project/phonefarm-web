@@ -28,7 +28,7 @@ function Home() {
             to='/buy-Iphone?preset=moveToLeftFromRight'
             onClick={() => changeDefaultBackground('buyIphone')}
           >
-            <img style={{}} src={iconStore} alt='icon' />
+            <img src={iconStore} alt='icon' />
           </Link>
           <p className='app-name'>NFT Store</p>
         </div>
@@ -36,7 +36,7 @@ function Home() {
           <Link
             className='ant-btn ant-btn-dashed btn-icon bg_liner center'
             to='/buy-Phone?preset=moveToLeftFromRight'
-            onClick={() => changeDefaultBackground()}
+            onClick={() => changeDefaultBackground('buyPhone')}
           >
             <img src={buyToken} alt='icon' />
           </Link>
@@ -46,7 +46,7 @@ function Home() {
           <Link
             className='ant-btn ant-btn-dashed btn-icon bg_liner center'
             to='/collection?preset=moveToLeftFromRight'
-            onClick={() => changeDefaultBackground()}
+            onClick={() => changeDefaultBackground('collection')}
           >
             <img src={iconSettings} alt='icon' />
           </Link>
@@ -56,7 +56,7 @@ function Home() {
           <Link
             className='ant-btn ant-btn-dashed btn-icon bg_liner center'
             to='/stake?preset=moveToLeftFromRight'
-            onClick={() => changeDefaultBackground()}
+            onClick={() => changeDefaultBackground('stake')}
           >
             <img src={stake} alt='icon' />
           </Link>

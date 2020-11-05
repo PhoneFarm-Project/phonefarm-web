@@ -37,7 +37,7 @@ export default function IphoneProduct({ iPhone, listColorModel, changeCurrentPho
           })}
         </Row>
         <p className='price_font'>
-          Price: {iPhone.price / 10 ** 18}{' '}
+          Price: {iPhone.price / 10 ** 18}
           <img className='tokenIcon' src={TokenIphone} alt='iphone token icon' /> IPHONE
         </p>
       </div>

@@ -221,30 +221,32 @@ function BuyPhone() {
                     />
                   </div>
                 </div>
-                {web3 &&
-                tokenCurrent !== '0' &&
-                erc20Allowances[tokenCurrent] &&
-                erc20Allowances[tokenCurrent].allowance <= 0 ? (
-                  <Button
-                    shape='round'
-                    className='offering-button-exchange'
-                    disabled={!web3}
-                    onClick={() => approveToken()}
-                    loading={loading}
-                  >
-                    Approve
-                  </Button>
-                ) : (
-                  <Button
-                    shape='round'
-                    className='offering-button-exchange'
-                    disabled={!web3 || (erc20Allowances.length > 0 && amount > balanceToken)}
-                    onClick={() => buyPhone()}
-                    loading={loading}
-                  >
-                    Buy
-                  </Button>
-                )}
+                <div className='bt_buyPhone'>
+                  {web3 &&
+                  tokenCurrent !== '0' &&
+                  erc20Allowances[tokenCurrent] &&
+                  erc20Allowances[tokenCurrent].allowance <= 0 ? (
+                    <Button
+                      shape='round'
+                      className='bt-liner'
+                      disabled={!web3}
+                      onClick={() => approveToken()}
+                      loading={loading}
+                    >
+                      Approve
+                    </Button>
+                  ) : (
+                    <Button
+                      shape='round'
+                      className='bt-liner'
+                      disabled={!web3 || (erc20Allowances.length > 0 && amount > balanceToken)}
+                      onClick={() => buyPhone()}
+                      loading={loading}
+                    >
+                      Buy
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
           </div>

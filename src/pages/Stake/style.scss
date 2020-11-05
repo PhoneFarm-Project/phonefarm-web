@@ -60,7 +60,7 @@ $base: 0.6rem;
 
 .bt-liner {
   background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%);
-  width: 37vw !important;
+  width: 42vw !important;
   height: 6vh !important;
   font-size: 4vw !important;
   border-radius: 20px !important;
@@ -68,7 +68,9 @@ $base: 0.6rem;
   font-weight: 800;
 }
 
-.bt-liner:hover {
+.bt-liner:hover,
+.bt-line:active,
+.bt-line:focus {
   background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%);
   color: white;
 }
@@ -90,7 +92,6 @@ $base: 0.6rem;
   top: 0;
   img {
     height: 3.7vh;
-    opacity: 0.6;
   }
   p {
     font-size: 5vw;

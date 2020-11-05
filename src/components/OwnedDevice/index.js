@@ -7,19 +7,19 @@ import IphoneIcon from 'assets/icons/Iphone-token-128.png';
 
 export default function OwnedDevice({ iPhone, loading, preview, currentLayout }) {
   return (
-    <Row className='boxStake mgb_15'>
-      <Col span={12}>
+    <Row className='boxStake own_device flex_between'>
+      <Col span={8}>
         <img className='my_ip' src={getIphoneLayout(iPhone.model, iPhone.color).img} alt='icon' />
       </Col>
       <Col className='center' span={16}>
         <p className='ip_font price_font'>
-          <strong>{parseBalance(iPhone.price, 18)}</strong>{' '}
+          <strong>{parseBalance(iPhone.price, 18)}</strong>
           <img src={IphoneIcon} alt='token icon' />
         </p>
         <p className='product_name_font'>
           {iPhone.model} {iPhone.color}
         </p>
-        <p className=''>{iPhone.balance} Item</p>
+        <p>{iPhone.balance} Item</p>
         {currentLayout.model === iPhone.model && currentLayout.color === iPhone.color ? (
           <Button className='product_bt btn-using'>Using</Button>
         ) : (

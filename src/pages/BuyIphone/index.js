@@ -102,7 +102,7 @@ export default function BuyIphone() {
   };
 
   return (
-    <div className='styleStake scroll_able flex_justify_content'>
+    <div className='styleStake flex_justify_content'>
       <div className='phone_header flex_between'>
         <div className='w32px'>
           <ButtonBack url='/home?preset=moveToRightFromLeft' />
@@ -123,7 +123,7 @@ export default function BuyIphone() {
             optionFilterProp='children'
             onChange={updateCurrent}
             filterOption={filterOption}
-            value={`iPhone ${currentPhone != null ? currentPhone.model : ''}`}
+            value={`iPhone ${currentPhone !== null ? currentPhone.model : ''}`}
           >
             {modelSelling.map((model, index) => {
               return (

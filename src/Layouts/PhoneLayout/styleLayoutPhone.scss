@@ -3,7 +3,7 @@ $phone-height: 100vh;
 .iphone3 {
   .default_layout {
     width: ($phone-height/19.5) * 8.6;
-    height: $phone-height * 0.665;
+    height: $phone-height * 0.78;
   }
   .content_box {
     .style_iframe {
@@ -69,8 +69,8 @@ $phone-height: 100vh;
 
 .iphone8 {
   .default_layout {
-    width: ($phone-height/19.5) * 8.8;
-    height: $phone-height * 0.75;
+    width: ($phone-height/19.5) * 9.3;
+    height: $phone-height * 0.88;
   }
   .content_box {
     .style_iframe {
@@ -86,9 +86,8 @@ $phone-height: 100vh;
 
 .iphoneX {
   .default_layout {
-    width: ($phone-height/19.5) * 8.78;
-    height: $phone-height * 0.85;
-    border-radius: $phone-height * 0.1;
+    width: ($phone-height/19.5) * 8.9;
+    height: $phone-height * 0.96;
   }
   .content_box {
     .style_iframe {
@@ -107,8 +106,8 @@ $phone-height: 100vh;
 
 .iphone11 {
   .default_layout {
-    width: ($phone-height/19.5) * 8.4;
-    height: $phone-height * 0.85;
+    width: ($phone-height/19.5) * 8.6;
+    height: $phone-height * 0.96;
   }
   .content_box {
     .style_iframe {
@@ -124,21 +123,20 @@ $phone-height: 100vh;
 
 .iphoneXS {
   .default_layout {
-    height: $phone-height * 0.858;
-    width: ($phone-height/19.5) * 8.67;
-    border-radius: $phone-height * 0.1;
+    height: $phone-height * 0.94;
+    width: ($phone-height/19.5) * 9.2;
   }
   .content_box {
     .style_iframe {
       width: ($phone-height/19.5) * 8.67;
-      height: $phone-height * 0.884;
+      height: $phone-height * 0.8;
       border-radius: 0.5em 0.5em 2.2em 2.2em;
       top: 6.7vh;
     }
     .lock {
       height: 80%;
       .screen_size {
-        height: $phone-height * 0.95;
+        height: $phone-height * 0.96;
         width: ($phone-height/19.5) * 9.6;
       }
     }
@@ -147,8 +145,8 @@ $phone-height: 100vh;
 
 .iphoneSE2 {
   .default_layout {
-    width: ($phone-height/19.5) * 8.5;
-    height: $phone-height * 0.7;
+    width: ($phone-height/19.5) * 9;
+    height: $phone-height * 0.87;
   }
   .content_box {
     .style_iframe {
@@ -163,20 +161,14 @@ $phone-height: 100vh;
 
 .iphoneXR {
   .default_layout {
-    width: ($phone-height/19.5) * 8.65;
-    height: $phone-height * 0.858;
-    border-radius: $phone-height * 0.1;
+    width: ($phone-height/19.5) * 8.8;
+    height: $phone-height * 0.96;
   }
   .content_box {
     .style_iframe {
       width: ($phone-height/19.5) * 8.65;
-      height: $phone-height * 0.88;
-      border-top-left-radius: 0.5em;
-      border-top-right-radius: 0.5em;
-      border-bottom-right-radius: 2.2em;
-      border-bottom-left-radius: 2.2em;
+      height: $phone-height * 0.83;
       top: 6.7vh;
-      left: 2.05vw;
     }
     .lock {
       height: 80%;
