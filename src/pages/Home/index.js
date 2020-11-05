@@ -14,42 +14,49 @@ function Home() {
   useEffect(() => {
     connectMetaMask();
   });
+
+  const changeDefaultBackground = (message) => {
+    window.parent.postMessage(message);
+  };
+
   return (
     <Layout className='styleHome'>
       <div className='row'>
-        <div className='col-3'>
+        <div className='col-3 pd-none center'>
           <Link
-            className='ant-btn ant-btn-dashed btn-icon'
+            className='ant-btn ant-btn-dashed btn-icon bg_liner center'
             to='/buy-Iphone?preset=moveToLeftFromRight'
+            onClick={() => changeDefaultBackground('buyIphone')}
           >
             <img src={iconStore} alt='icon' />
           </Link>
           <p className='app-name'>NFT Store</p>
         </div>
-        <div className='col-3'>
+        <div className='col-3 pd-none center'>
           <Link
-            className='ant-btn ant-btn-dashed btn-icon'
+            className='ant-btn ant-btn-dashed btn-icon bg_liner center'
             to='/buy-Phone?preset=moveToLeftFromRight'
-            style={{ background: 'rgb(26,133,232,0.93)' }}
+            onClick={() => changeDefaultBackground('buyPhone')}
           >
             <img src={buyToken} alt='icon' />
           </Link>
           <p className='app-name'>Token Store</p>
         </div>
-        <div className='col-3'>
+        <div className='col-3 pd-none center'>
           <Link
-            className='ant-btn ant-btn-dashed btn-icon'
+            className='ant-btn ant-btn-dashed btn-icon bg_liner center'
             to='/collection?preset=moveToLeftFromRight'
+            onClick={() => changeDefaultBackground('collection')}
           >
             <img src={iconSettings} alt='icon' />
           </Link>
           <p className='app-name'>Collection</p>
         </div>
-        <div className='col-3'>
+        <div className='col-3 pd-none center'>
           <Link
-            className='ant-btn ant-btn-dashed btn-icon'
-            style={{ background: 'rgb(4,148,130,0.76)' }}
+            className='ant-btn ant-btn-dashed btn-icon bg_liner center'
             to='/stake?preset=moveToLeftFromRight'
+            onClick={() => changeDefaultBackground('stake')}
           >
             <img src={stake} alt='icon' />
           </Link>

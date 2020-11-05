@@ -17,7 +17,7 @@ import {
   setTokenLocked,
 } from 'store/actions';
 
-import PhoneFarm from 'assets/images/logo-black.png';
+import PhoneFarm from 'assets/images/logo.png';
 import PhoneIcon from 'assets/icons/phoneFarm-logo-128.png';
 import DaiIcon from 'assets/icons/dai-icon.png';
 import './style.scss';
@@ -84,18 +84,18 @@ function Stake() {
 
   return (
     <Layout className='styleStake stake audio_font'>
-      <div className='stake_header flex_between'>
+      <div className='phone_header flex_between'>
         <div className='w32px'>
-          <ButtonBack url='/home?preset=moveToRightFromLeft' size='small' />
+          <ButtonBack url='/home?preset=moveToRightFromLeft' />
         </div>
         <img src={PhoneFarm} alt='phonefarm' />
         <div className='w32px' />
       </div>
 
-      <div className='phone_info flex_between'>
+      <div className='phone_body flex_between'>
         {!!pools[poolSelected] ? (
           symbol === 'PHONE' ? (
-            <div className='w50 flex_between'>
+            <div className='w50 flex'>
               <div className='phoneicon'>
                 <img src={PhoneIcon} alt='icon phone' />
               </div>
@@ -105,7 +105,7 @@ function Stake() {
               </div>
             </div>
           ) : symbol === 'DAI' ? (
-            <div className='w50 flex_between'>
+            <div className='w50 flex'>
               <div className='phoneicon'>
                 <img src={DaiIcon} alt='icon phone' />
               </div>

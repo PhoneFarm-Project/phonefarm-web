@@ -5,7 +5,7 @@ $base: 0.6rem;
   height: 90% !important;
   display: flex;
   .boxStake {
-    min-height: 400px;
+    min-height: 30vh;
   }
 }
 
@@ -20,9 +20,10 @@ $base: 0.6rem;
   position: relative;
   padding: 0vh 0em 1em 0em;
   height: 100vh;
-  background: #f0f2f5;
+  background-color: transparent;
   .boxStake {
     padding: 4vh 2vh;
+    min-height: 30vh;
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -57,16 +58,25 @@ $base: 0.6rem;
   text-align: center !important;
 }
 
-.bt-width {
+.bt-liner {
   background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%);
-  width: 85% !important;
+  width: 42vw !important;
   height: 6vh !important;
   font-size: 4vw !important;
   border-radius: 20px !important;
+  color: white;
+  font-weight: 800;
 }
 
-.bt-width:hover {
+.bt-liner:hover,
+.bt-line:active,
+.bt-line:focus {
   background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%);
+  color: white;
+}
+
+.flex {
+  display: flex;
 }
 
 .flex_between {
@@ -75,18 +85,23 @@ $base: 0.6rem;
   align-items: center;
 }
 
-.stake_header {
+.phone_header {
   position: absolute;
   width: 100%;
   height: 6vh;
   top: 0;
   img {
     height: 3.7vh;
-    opacity: 0.6;
+  }
+  p {
+    font-size: 5vw;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0;
   }
 }
 
-.phone_info {
+.phone_body {
   margin-top: 6vh;
   width: 100%;
 }

@@ -132,8 +132,8 @@ function BuyPhone() {
 
   return (
     <Layout className='styleStake buy-phone'>
-      <div className='buy-phone-header'>
-        <ButtonBack url='/home?preset=moveToRightFromLeft' text='Home' />
+      <div className='phone_header flex_between'>
+        <ButtonBack url='/home?preset=moveToRightFromLeft' />
       </div>
       <div className='page-sale'>
         <div className='offering-content'>
@@ -221,30 +221,32 @@ function BuyPhone() {
                     />
                   </div>
                 </div>
-                {web3 &&
-                tokenCurrent !== '0' &&
-                erc20Allowances[tokenCurrent] &&
-                erc20Allowances[tokenCurrent].allowance <= 0 ? (
-                  <Button
-                    shape='round'
-                    className='offering-button-exchange'
-                    disabled={!web3}
-                    onClick={() => approveToken()}
-                    loading={loading}
-                  >
-                    Approve
-                  </Button>
-                ) : (
-                  <Button
-                    shape='round'
-                    className='offering-button-exchange'
-                    disabled={!web3 || (erc20Allowances.length > 0 && amount > balanceToken)}
-                    onClick={() => buyPhone()}
-                    loading={loading}
-                  >
-                    Buy
-                  </Button>
-                )}
+                <div className='bt_buyPhone'>
+                  {web3 &&
+                  tokenCurrent !== '0' &&
+                  erc20Allowances[tokenCurrent] &&
+                  erc20Allowances[tokenCurrent].allowance <= 0 ? (
+                    <Button
+                      shape='round'
+                      className='bt-liner'
+                      disabled={!web3}
+                      onClick={() => approveToken()}
+                      loading={loading}
+                    >
+                      Approve
+                    </Button>
+                  ) : (
+                    <Button
+                      shape='round'
+                      className='bt-liner'
+                      disabled={!web3 || (erc20Allowances.length > 0 && amount > balanceToken)}
+                      onClick={() => buyPhone()}
+                      loading={loading}
+                    >
+                      Buy
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
           </div>

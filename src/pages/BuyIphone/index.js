@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import IphoneProduct from 'components/IphoneProduct';
 import { useSelector, useDispatch } from 'react-redux';
+import { Spin, Select, Empty, Button } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
+import ButtonBack from 'components/ButtonBack';
+import getIphoneLayout from 'utils/getIphoneLayout';
+import Ship from 'assets/images/ship.png';
 import {
   setAllDevices,
   approveIPhone,
@@ -8,10 +13,8 @@ import {
   setIPhoneBal,
   buyDevice,
 } from 'store/actions';
-import { Spin, Select, Empty } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
-import ButtonBack from 'components/ButtonBack';
-import getIphoneLayout from 'utils/getIphoneLayout';
+
+import './style.scss';
 
 const { Option } = Select;
 
@@ -99,52 +102,78 @@ export default function BuyIphone() {
   };
 
   return (
-    <div className='styleStake scroll_able'>
-      <ButtonBack url='/home?preset=moveToRightFromLeft' text='Home' />
-      <Spin
-        indicator={antIcon}
-        spinning={loading && currentPhone === null}
-        className='spin-center-screen'
-      >
-        <Select
-          showSearch
-          style={{ width: 200 }}
-          placeholder='Select type iPhone'
-          optionFilterProp='children'
-          onChange={updateCurrent}
-          filterOption={filterOption}
-          value={`iPhone ${currentPhone != null ? currentPhone.model : ''}`}
+    <div className='styleStake flex_justify_content'>
+      <div className='phone_header flex_between'>
+        <div className='w32px'>
+          <ButtonBack url='/home?preset=moveToRightFromLeft' />
+        </div>
+        <p>Choose your model</p>
+        <div className='w32px' />
+      </div>
+      <div className='buy_iphone_body'>
+        <Spin
+          indicator={antIcon}
+          spinning={loading && currentPhone === null}
+          className='spin-center-screen'
         >
-          {modelSelling.map((model, index) => {
-            return (
-              <Option value={model} key={index}>
-                iPhone {model}
-              </Option>
-            );
-          })}
-        </Select>
-        {!loading && allDevices.length <= 0 ? (
-          <Empty
-            image={Empty.PRESENTED_IMAGE_SIMPLE}
-            description='No device'
-            className='stye-empty-box'
-          />
-        ) : null}
-        {currentPhone && currentPhone.id > 0 ? (
-          <IphoneProduct
-            listColorModel={listColorModel}
-            iPhone={currentPhone}
-            hiddenBtn={!isApproved}
-            buyDevice={() => handleBuyDevice(currentPhone.id, currentPhone.price)}
-            approveIPhone={() => handleApproveIPhone(currentPhone.id)}
-            changeCurrentPhone={(model, color) => changeCurrentPhone(model, color)}
-            isApproved={isApproved}
-            loading={loading}
-          />
-        ) : (
-          ''
-        )}
-      </Spin>
+          <Select
+            showSearch
+            style={{ width: 200 }}
+            placeholder='Select type iPhone'
+            optionFilterProp='children'
+            onChange={updateCurrent}
+            filterOption={filterOption}
+            value={`iPhone ${currentPhone !== null ? currentPhone.model : ''}`}
+          >
+            {modelSelling.map((model, index) => {
+              return (
+                <Option value={model} key={index}>
+                  iPhone {model}
+                </Option>
+              );
+            })}
+          </Select>
+          {!loading && allDevices.length <= 0 ? (
+            <Empty
+              image={Empty.PRESENTED_IMAGE_SIMPLE}
+              description='No device'
+              className='stye-empty-box'
+            />
+          ) : null}
+          {currentPhone && currentPhone.id > 0 ? (
+            <div>
+              <IphoneProduct
+                listColorModel={listColorModel}
+                iPhone={currentPhone}
+                changeCurrentPhone={(model, color) => changeCurrentPhone(model, color)}
+                loading={loading}
+              />
+
+              {isApproved ? (
+                <Button
+                  className='product_bt bt-liner'
+                  onClick={() => handleBuyDevice(currentPhone.id, currentPhone.price)}
+                  disabled={!isApproved}
+                  loading={loading}
+                >
+                  Buy
+                </Button>
+              ) : (
+                <Button
+                  className='product_bt bt-liner'
+                  onClick={() => handleApproveIPhone(currentPhone.id)}
+                  loading={loading}
+                >
+                  Approve IPHONE
+                </Button>
+              )}
+            </div>
+          ) : (
+            ''
+          )}
+        </Spin>
+        <img className='ship_image' src={Ship} alt='ship' />
+      </div>
     </div>
   );
 }

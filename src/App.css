@@ -3,7 +3,7 @@
 .App {
   text-align: center;
   height: 100vh;
-  background: #f0f2f5;
+  /* background: #f0f2f5; */
 }
 
 .ip_font {
@@ -31,4 +31,18 @@
 
 .ant-layout {
   background: none;
+}
+
+.pd-none {
+  padding: 0 !important;
+}
+
+.scroll_able {
+  overflow: overlay;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll_able::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }

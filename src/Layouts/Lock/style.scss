@@ -1,6 +1,6 @@
 $phone-height: 99vh;
-$screen-heght: $phone-height * 0.94;
-$screen-width: ($phone-height/19.5) * 9;
+$screen-heght: $phone-height * 0.97;
+$screen-width: ($phone-height/19.5) * 9.5;
 $screen-radius: $phone-height/18.8;
 
 .screen_size {
@@ -11,7 +11,8 @@ $screen-radius: $phone-height/18.8;
 }
 
 .lock_screen {
-  background-image: url('../../assets/phoneCases/iphone11/iphonewallpaper.jpg');
+  background-size: 100% 100%;
+  background-image: url('../../assets/phoneCases/iphone11/iphonewallpaper.png');
 }
 
 .fog {
@@ -22,10 +23,11 @@ $screen-radius: $phone-height/18.8;
 .lock_area {
   position: absolute;
   top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $screen-width;
+  width: 100%;
   height: $screen-heght/2.5;
   flex-direction: column;
 }

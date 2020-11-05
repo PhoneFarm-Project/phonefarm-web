@@ -1,0 +1,26 @@
+.collection_body {
+  .ant-carousel .slick-dots {
+    position: relative;
+    li {
+      height: 1.3vh;
+      width: 1.3vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%) !important;
+        height: 0.7vh;
+        width: 0.7vh;
+        border-radius: 50%;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .ant-carousel .slick-dots li.slick-active button {
+    opacity: 1;
+    height: 1.1vh;
+    width: 1.1vh;
+    background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%) !important;
+  }
+}

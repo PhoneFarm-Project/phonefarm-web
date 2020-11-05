@@ -1,19 +1,12 @@
 $height: 30vh;
-.mgb_15 {
-  margin-bottom: 5vh !important;
+.own_device {
+  margin-top: 7vh !important;
+  margin-bottom: 1vh !important;
+  width: 90% !important;
 }
 
-.ip_product_image {
-  height: $height;
-  width: $height * 0.7;
-  padding: 2vh;
-}
-
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.my_ip {
+  width: 90%;
 }
 
 .head_font {
@@ -25,14 +18,17 @@ $height: 30vh;
 }
 
 .price_font {
+  font-size: 4vw;
+  display: flex;
+  align-items: center;
   strong {
     font-size: 6vw;
     margin-top: 1%;
   }
-  font-size: 4vw;
   img {
-    height: 20px;
-    width: 20;
+    height: 5vw;
+    width: 5vw;
+    margin-left: 1vw;
   }
 }
 
