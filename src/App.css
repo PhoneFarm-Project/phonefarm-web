@@ -46,3 +46,9 @@
 .scroll_able::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+
+.ant-message-custom-content {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
