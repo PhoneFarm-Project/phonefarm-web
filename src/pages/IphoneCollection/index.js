@@ -22,7 +22,7 @@ export default function IphoneCollection() {
     for (var j = 0; j < devices.length / 2; j++) {
       let c = [];
       c.push(devices[2 * j]);
-      if (!!devices[2 * (j + 1)]) {
+      if (!!devices[2 * j + 1]) {
         c.push(devices[2 * j + 1]);
       }
       a.push(c);
@@ -45,6 +45,7 @@ export default function IphoneCollection() {
     window.parent.postMessage('ChangeLayout');
     setCurrentLayout({ brand: 'iphone', model, color });
   };
+
   return (
     <div className='styleStake flex_justify_content'>
       <div className='phone_header flex_between'>

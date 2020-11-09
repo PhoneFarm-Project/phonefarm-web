@@ -133,14 +133,17 @@ function BuyPhone() {
   return (
     <Layout className='styleStake buy-phone'>
       <div className='phone_header flex_between'>
-        <ButtonBack url='/home?preset=moveToRightFromLeft' />
+        <div className='w32px'>
+          <ButtonBack url='/home?preset=moveToRightFromLeft' />
+        </div>
+        <p> Buy PHONE</p>
+        <div className='w32px' />
       </div>
       <div className='page-sale'>
         <div className='offering-content'>
           <div className='offering-buy-token'>
             <div className='col-12 col-md-6 order-1 order-md-2'>
               <div className='offering-box-buy-token'>
-                <div className='offering-text-exchange'>Buy PHONE</div>
                 <div className='offering-amount-to-phone'>
                   <div className='offering-amount'>
                     <InputNumber

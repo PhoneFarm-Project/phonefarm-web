@@ -20,13 +20,18 @@ $phone-height: 100vh;
 .iphone4 {
   .default_layout {
     width: ($phone-height/19.5) * 8.7;
-    height: $phone-height * 0.65;
+    height: $phone-height * 0.77;
+    .bg_stake {
+      height: 76vh !important;
+    }
+    .bg_liner_buyPhone {
+      height: 67vh !important;
+    }
   }
   .content_box {
     .style_iframe {
-      width: ($phone-height/19.5) * 8.7;
-      height: $phone-height * 0.636;
-      top: 18.4vh;
+      width: ($phone-height/19.5) * 8.53;
+      height: $phone-height * 0.65;
     }
     .lock {
       height: 66%;
@@ -36,16 +41,13 @@ $phone-height: 100vh;
 
 .iphone5 {
   .default_layout {
-    position: absolute;
-    width: ($phone-height/19.5) * 8.3;
-    height: $phone-height * 0.7;
-    left: 5.1vh;
+    width: ($phone-height/19.5) * 8.8;
+    height: $phone-height * 0.83;
   }
   .content_box {
     .style_iframe {
       width: ($phone-height/19.5) * 8.2;
       height: $phone-height * 0.7;
-      left: 5.4vh;
     }
     .lock {
       height: 66%;
@@ -67,10 +69,32 @@ $phone-height: 100vh;
   }
 }
 
+.iphone7 {
+  .default_layout {
+    width: ($phone-height/19.5) * 9.3;
+    height: $phone-height * 0.86;
+    .bg_stake {
+      height: 80vh;
+    }
+  }
+  .content_box {
+    .style_iframe {
+      width: ($phone-height/19.5) * 8.6;
+      height: $phone-height * 0.75;
+    }
+    .lock {
+      height: 66%;
+    }
+  }
+}
+
 .iphone8 {
   .default_layout {
     width: ($phone-height/19.5) * 9.3;
     height: $phone-height * 0.88;
+    .bg_stake {
+      height: 80vh;
+    }
   }
   .content_box {
     .style_iframe {
@@ -88,6 +112,9 @@ $phone-height: 100vh;
   .default_layout {
     width: ($phone-height/19.5) * 8.9;
     height: $phone-height * 0.96;
+    .bg_liner_collection {
+      border-radius: 4.5vh !important;
+    }
   }
   .content_box {
     .style_iframe {
@@ -97,7 +124,7 @@ $phone-height: 100vh;
     .lock {
       height: 80%;
       .screen_size {
-        height: $phone-height * 0.95;
+        height: $phone-height * 0.97;
         width: ($phone-height/19.5) * 9.6;
       }
     }
