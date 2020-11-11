@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, Fragment } from 'react';
 import OwnedDevice from 'components/OwnedDevice';
 import ButtonBack from 'components/ButtonBack';
 import { useSelector, useDispatch } from 'react-redux';
 import { setOwnedDevices } from 'store/actions';
 import { Spin, Empty, Carousel } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
+import { LoadingOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 import './style.scss';
 
@@ -16,6 +16,7 @@ export default function IphoneCollection() {
   const ownedDevices = useSelector((state) => state.ownedDevices);
   const loading = useSelector((state) => state.loading);
   const dispatch = useDispatch();
+  const slider = useRef(null);
 
   const formatDevices = (devices) => {
     var a = [];
@@ -64,24 +65,32 @@ export default function IphoneCollection() {
               className='stye-empty-box'
             />
           ) : null}
-          <Carousel effect='scrollx'>
-            {doubleDevices.map((iPhone, index) => {
-              return (
-                <div key={index}>
-                  <OwnedDevice iPhone={iPhone[0]} preview={preview} currentLayout={currentLayout} />
-                  {!!iPhone[1] ? (
+          <Fragment>
+            <LeftOutlined className='icon_lr icon_left' onClick={() => slider.current.prev()} />
+            <Carousel ref={slider} effect='scrollx'>
+              {doubleDevices.map((iPhone, index) => {
+                return (
+                  <div key={index}>
                     <OwnedDevice
-                      iPhone={iPhone[1]}
+                      iPhone={iPhone[0]}
                       preview={preview}
                       currentLayout={currentLayout}
                     />
-                  ) : (
-                    <></>
-                  )}
-                </div>
-              );
-            })}
-          </Carousel>
+                    {!!iPhone[1] ? (
+                      <OwnedDevice
+                        iPhone={iPhone[1]}
+                        preview={preview}
+                        currentLayout={currentLayout}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                );
+              })}
+            </Carousel>
+            <RightOutlined className='icon_lr icon_right' onClick={() => slider.current.next()} />
+          </Fragment>
         </Spin>
       </div>
     </div>
