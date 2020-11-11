@@ -94,6 +94,7 @@ $phone-height: 100vh;
     height: $phone-height * 0.88;
     .bg_stake {
       height: 80vh;
+      margin-top: 11vh;
     }
   }
   .content_box {
@@ -152,6 +153,9 @@ $phone-height: 100vh;
   .default_layout {
     height: $phone-height * 0.94;
     width: ($phone-height/19.5) * 9.2;
+    .bg_stake {
+      margin-top: 9vh;
+    }
   }
   .content_box {
     .style_iframe {

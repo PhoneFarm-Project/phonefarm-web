@@ -1,6 +1,7 @@
 .collection_body {
   .ant-carousel .slick-dots {
     position: relative;
+
     li {
       height: 1.3vh;
       width: 1.3vh;
@@ -17,10 +18,38 @@
     }
   }
 
-  .ant-carousel .slick-dots li.slick-active button {
+  .slick-dots-bottom {
+    bottom: 0px;
+  }
+
+  .slick-dots li.slick-active button {
     opacity: 1;
     height: 1.1vh;
     width: 1.1vh;
     background: linear-gradient(90deg, #0d78f8 0%, #5361ca 100%) !important;
   }
+}
+
+.icon_lr {
+  position: absolute;
+  font-size: 6vh;
+  width: 6vh;
+  height: 6vh;
+  opacity: 0.3;
+  cursor: pointer;
+  margin-top: 11vh;
+  padding-top: 147px;
+  z-index: 5;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.icon_left {
+  left: 1vh;
+}
+
+.icon_right {
+  right: 1vh;
+  top: 0;
 }

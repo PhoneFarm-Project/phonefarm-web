@@ -19,7 +19,7 @@ import {
 
 import PhoneFarm from 'assets/images/logo.png';
 import PhoneIcon from 'assets/icons/phoneFarm-logo-128.png';
-import DaiIcon from 'assets/icons/dai-icon.png';
+import DaiIcon from 'assets/icons/dai.png';
 import './style.scss';
 
 const { TabPane } = Tabs;

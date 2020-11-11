@@ -58,6 +58,14 @@ function PhoneLayout() {
 
   return (
     <div className='style_home_layout'>
+      <p className='wallet_address'>
+        {!!walletAddress
+          ? `Address : ${walletAddress.slice(0, 8)}...${walletAddress.slice(
+              walletAddress.length - 6,
+              walletAddress.length
+            )}`
+          : ''}
+      </p>
       <Circle top='60%' left='80%' size='80px' type='warning' />
       <Square top='50px' left='20px' size='140px' type='info' blur />
       <Dots />
@@ -75,7 +83,7 @@ function PhoneLayout() {
               <div className='bg_line bg_liner bg_liner_buyPhone' />
             </div>
           ) : background === 3 ? (
-            <div className='default_layout bg_image '>
+            <div className='default_layout bg_w bg_image '>
               <div className='bg_line bg_liner bg_liner_collection' />
             </div>
           ) : (

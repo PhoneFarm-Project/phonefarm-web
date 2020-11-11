@@ -173,6 +173,14 @@ button:active {
   animation: dotsAnime 0.5s ease 0.5s forwards;
 }
 
+.wallet_address {
+  position: fixed;
+  top: 1vh;
+  right: 3vw;
+  z-index: 100;
+  font-weight: 700;
+}
+
 .circle,
 .square {
   position: fixed;

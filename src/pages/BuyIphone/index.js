@@ -110,69 +110,76 @@ export default function BuyIphone() {
         <p>Choose your model</p>
         <div className='w32px' />
       </div>
-      <div className='buy_iphone_body'>
-        <Spin
-          indicator={antIcon}
-          spinning={loading && currentPhone === null}
-          className='spin-center-screen'
-        >
-          <Select
-            showSearch
-            style={{ width: 200 }}
-            placeholder='Select type iPhone'
-            optionFilterProp='children'
-            onChange={updateCurrent}
-            filterOption={filterOption}
-            value={`iPhone ${currentPhone !== null ? currentPhone.model : ''}`}
+      <div className='buy_iphone_body '>
+        <div className='product_info'>
+          <Spin
+            indicator={antIcon}
+            spinning={loading && currentPhone === null}
+            className='spin-center-screen'
           >
-            {modelSelling.map((model, index) => {
-              return (
-                <Option value={model} key={index}>
-                  iPhone {model}
-                </Option>
-              );
-            })}
-          </Select>
-          {!loading && allDevices.length <= 0 ? (
-            <Empty
-              image={Empty.PRESENTED_IMAGE_SIMPLE}
-              description='No device'
-              className='stye-empty-box'
-            />
-          ) : null}
-          {currentPhone && currentPhone.id > 0 ? (
-            <div>
-              <IphoneProduct
-                listColorModel={listColorModel}
-                iPhone={currentPhone}
-                changeCurrentPhone={(model, color) => changeCurrentPhone(model, color)}
-                loading={loading}
+            <Select
+              showSearch
+              style={{ width: 200 }}
+              placeholder='Select type iPhone'
+              optionFilterProp='children'
+              onChange={updateCurrent}
+              filterOption={filterOption}
+              value={`iPhone ${currentPhone !== null ? currentPhone.model : ''}`}
+            >
+              {modelSelling.map((model, index) => {
+                return (
+                  <Option value={model} key={index}>
+                    iPhone {model}
+                  </Option>
+                );
+              })}
+            </Select>
+            {!loading && allDevices.length <= 0 ? (
+              <Empty
+                image={Empty.PRESENTED_IMAGE_SIMPLE}
+                description='No device'
+                className='stye-empty-box'
               />
-
-              {isApproved ? (
-                <Button
-                  className='product_bt bt-liner'
-                  onClick={() => handleBuyDevice(currentPhone.id, currentPhone.price)}
-                  disabled={!isApproved}
+            ) : null}
+            {currentPhone && currentPhone.id > 0 ? (
+              <div>
+                <IphoneProduct
+                  listColorModel={listColorModel}
+                  iPhone={currentPhone}
+                  changeCurrentPhone={(model, color) => changeCurrentPhone(model, color)}
                   loading={loading}
-                >
-                  Buy
-                </Button>
-              ) : (
-                <Button
-                  className='product_bt bt-liner'
-                  onClick={() => handleApproveIPhone(currentPhone.id)}
-                  loading={loading}
-                >
-                  Approve IPHONE
-                </Button>
-              )}
-            </div>
+                />
+              </div>
+            ) : (
+              ''
+            )}
+          </Spin>
+        </div>
+        {currentPhone && currentPhone.id > 0 ? (
+          isApproved ? (
+            <Button
+              className='product_bt bt-liner'
+              onClick={() => handleBuyDevice(currentPhone.id, currentPhone.price)}
+              disabled={!isApproved}
+              loading={loading}
+            >
+              Buy
+            </Button>
           ) : (
-            ''
-          )}
-        </Spin>
-        <img className='ship_image' src={Ship} alt='ship' />
+            <Button
+              className='product_bt bt-liner'
+              onClick={() => handleApproveIPhone(currentPhone.id)}
+              loading={loading}
+            >
+              Approve IPHONE
+            </Button>
+          )
+        ) : (
+          ''
+        )}
+        <div className='col'>
+          <img className='ship_image ' src={Ship} alt='ship' />
+        </div>
       </div>
     </div>
   );
