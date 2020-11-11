@@ -220,6 +220,22 @@ import iPhone12ProMaxPacificBlueImg from 'assets/phoneCases/iphone12/12promax/sh
 import iPhone12ProMaxSilverImg from 'assets/phoneCases/iphone12/12promax/shop/iPhone12ProMaxSilver.png';
 
 const iphoneInfo = {
+  // 1: {
+  //   Aluminum: {
+  //     style: 'iphone1',
+  //     img: iPhone1Img,
+  //     layout: iPhone1,
+  //     codeColor: '#1F2020',
+  //   },
+  // },
+  1: {
+    Aluminum: {
+      style: 'iphone3',
+      img: iPhone3Img,
+      layout: iPhone3,
+      codeColor: '#1F2020',
+    },
+  },
   3: {
     Black: {
       style: 'iphone3',
@@ -237,6 +253,20 @@ const iphoneInfo = {
     },
   },
   4: {
+    Black: {
+      style: 'iphone4',
+      img: iPhone4BlackImg,
+      layout: iPhone4Black,
+      codeColor: '#1F2020',
+    },
+    White: {
+      style: 'iphone4',
+      img: iPhone4WhiteImg,
+      layout: iPhone4White,
+      codeColor: '#f8f6ef',
+    },
+  },
+  '4S': {
     Black: {
       style: 'iphone4',
       img: iPhone4BlackImg,
