@@ -13,7 +13,7 @@ const tokenInfo = {
   },
   // Ropsten network
   3: {
-    '0x687E7b9e61103F120e3f4eB6a61d6460ccC62042': {
+    '0xb6493327D607b14028747aa195A7EEEFE98F2B4C': {
       symbol: 'PHONE',
     },
     '0xaD6D458402F60fD3Bd25163575031ACDce07538D': {
@@ -24,7 +24,7 @@ const tokenInfo = {
     },
   },
   4: {
-    '0x7fd5B54c39ba2665c9D416532BE79f0257F387F0': {
+    '0xEA68aB261B92584458023f2C1aF87154a38F9A3F': {
       symbol: 'PHONE',
     },
     '0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735': {
