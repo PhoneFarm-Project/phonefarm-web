@@ -45,13 +45,18 @@ function BuyPhone() {
   useEffect(() => {
     dispatch(setTokensPresale());
     if (web3 && walletAddress) {
-      dispatch(setAllowancesERC20());
       dispatch(setPhoneBalance());
     }
     if (web3 && erc20Allowances[tokenCurrent]) {
       setBalanceToken(erc20Allowances[tokenCurrent].balance);
     }
   }, [dispatch, web3, walletAddress, tokenCurrent, erc20Allowances]);
+
+  useEffect(() => {
+    if (web3 && walletAddress) {
+      dispatch(setAllowancesERC20());
+    }
+  }, [dispatch, web3, walletAddress]);
 
   useEffect(() => {
     if (web3) {
@@ -166,7 +171,6 @@ function BuyPhone() {
                     <Select
                       value={tokenCurrent}
                       className='offering-amount-select-token'
-                      showSearch
                       placeholder='Select Token'
                       optionFilterProp='children'
                       onChange={(e) => onChangeToken(e)}

@@ -64,33 +64,34 @@ export default function IphoneCollection() {
               description='No device'
               className='stye-empty-box'
             />
-          ) : null}
-          <Fragment>
-            <LeftOutlined className='icon_lr icon_left' onClick={() => slider.current.prev()} />
-            <Carousel ref={slider} effect='scrollx'>
-              {doubleDevices.map((iPhone, index) => {
-                return (
-                  <div key={index}>
-                    <OwnedDevice
-                      iPhone={iPhone[0]}
-                      preview={preview}
-                      currentLayout={currentLayout}
-                    />
-                    {!!iPhone[1] ? (
+          ) : (
+            <Fragment>
+              <LeftOutlined className='icon_lr icon_left' onClick={() => slider.current.prev()} />
+              <Carousel ref={slider} effect='scrollx'>
+                {doubleDevices.map((iPhone, index) => {
+                  return (
+                    <div key={index}>
                       <OwnedDevice
-                        iPhone={iPhone[1]}
+                        iPhone={iPhone[0]}
                         preview={preview}
                         currentLayout={currentLayout}
                       />
-                    ) : (
-                      <></>
-                    )}
-                  </div>
-                );
-              })}
-            </Carousel>
-            <RightOutlined className='icon_lr icon_right' onClick={() => slider.current.next()} />
-          </Fragment>
+                      {!!iPhone[1] ? (
+                        <OwnedDevice
+                          iPhone={iPhone[1]}
+                          preview={preview}
+                          currentLayout={currentLayout}
+                        />
+                      ) : (
+                        <></>
+                      )}
+                    </div>
+                  );
+                })}
+              </Carousel>
+              <RightOutlined className='icon_lr icon_right' onClick={() => slider.current.next()} />
+            </Fragment>
+          )}
         </Spin>
       </div>
     </div>

@@ -4,6 +4,7 @@ const initialState = {
   web3: null,
   chainId: null,
   walletAddress: null,
+  shortAddress: null,
   balance: 0,
   factoryInstance: null,
   saleInstance: null,
@@ -44,6 +45,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         walletAddress: action.walletAddress,
+        shortAddress: action.shortAddress,
       };
     case actions.SET_BALANCE:
       return {
