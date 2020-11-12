@@ -21,7 +21,7 @@ export default function Pool({ apy, token, phoneStake, pendingIPhone }) {
         </div>
         <div className='apy'>
           <p className='apy_number'>
-            {typeof apy === 'string' ? apy : Math.round(apy * 100) / 100}%
+            {typeof apy === 'string' ? apy : Math.round(apy * 100) / 100 + ' %'}
           </p>
           <p className='gray'>APY</p>
         </div>
