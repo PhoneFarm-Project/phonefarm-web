@@ -167,8 +167,8 @@ button:active {
   align-content: space-between;
   justify-content: space-between;
   position: absolute;
-  top: 30px;
-  right: 20%;
+  top: 10%;
+  right: 23%;
   opacity: 0;
   animation: dotsAnime 0.5s ease 0.5s forwards;
 }
@@ -179,6 +179,45 @@ button:active {
   right: 3vw;
   z-index: 100;
   font-weight: 700;
+  .token_balance {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    p {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      .tokenIcon {
+        height: 18px;
+        width: 18px;
+        margin: 0px 5px;
+      }
+    }
+  }
+  .network_name {
+    display: flex;
+    align-items: center;
+    p {
+      margin: 0;
+    }
+    div {
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      border: none;
+      margin-right: 5px;
+    }
+
+    .main {
+      background-color: rgb(3, 135, 137);
+    }
+    .ropsten {
+      background-color: rgb(233, 21, 80);
+    }
+    .rinkeby {
+      background-color: rgb(235, 179, 63);
+    }
+  }
 }
 
 .circle,

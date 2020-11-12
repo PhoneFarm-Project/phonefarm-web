@@ -3,17 +3,25 @@ import Square from './Square';
 import Circle from './Circle';
 import Dots from './Dots';
 import Lock from 'Layouts/Lock';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { connectMetaMask } from 'utils/connectMetaMask';
 import getIphoneLayout from 'utils/getIphoneLayout';
+import TokenIphone from 'assets/icons/Iphone-token-128.png';
+import TokenPhone from 'assets/icons/phoneFarm-logo-128.png';
 
 import './style.scss';
 import './styleLayoutPhone.scss';
+import { setPhoneBalance, setIPhoneBal } from 'store/actions';
 
 function PhoneLayout() {
+  const dispatch = useDispatch();
   let layoutStorage = JSON.parse(localStorage.getItem('device'));
   const [layout, setLayout] = useState();
   const [background, setBackground] = useState(0);
+  const shortAddress = useSelector((state) => state.shortAddress);
+  const chainId = useSelector((state) => state.chainId);
+  const iPhoneBal = useSelector((state) => state.iPhoneBal);
+  const phoneBalance = useSelector((state) => state.phoneBalance);
 
   useEffect(() => {
     if (!layoutStorage) {
@@ -26,6 +34,13 @@ function PhoneLayout() {
       setLayout(getIphoneLayout(layoutStorage.model, layoutStorage.color));
     }
   }, [setLayout, layoutStorage]);
+
+  useEffect(() => {
+    if (!!shortAddress) {
+      dispatch(setPhoneBalance());
+      dispatch(setIPhoneBal());
+    }
+  }, [dispatch, shortAddress]);
 
   useEffect(() => {
     window.addEventListener(
@@ -50,22 +65,49 @@ function PhoneLayout() {
     );
   });
 
-  const walletAddress = useSelector((state) => state.walletAddress);
-
   const connect = () => {
     connectMetaMask();
   };
 
   return (
     <div className='style_home_layout'>
-      <p className='wallet_address'>
-        {!!walletAddress
-          ? `Address : ${walletAddress.slice(0, 8)}...${walletAddress.slice(
-              walletAddress.length - 6,
-              walletAddress.length
-            )}`
-          : ''}
-      </p>
+      {!!shortAddress ? (
+        <div className='wallet_address'>
+          {chainId === 1 ? (
+            <div className='network_name'>
+              <div className='main' />
+              <p>{` Ethereum Mainnet : ${shortAddress}`}</p>
+            </div>
+          ) : chainId === 3 ? (
+            <div className='network_name'>
+              <div className='ropsten' />
+              <p>{`Ropsten Test Network : ${shortAddress}`}</p>
+            </div>
+          ) : chainId === 4 ? (
+            <div className='network_name'>
+              <div className='rinkeby' />
+              <p>{`Rinkeby Test Network : ${shortAddress}`}</p>
+            </div>
+          ) : (
+            ''
+          )}
+          <div className='token_balance'>
+            <p>
+              {phoneBalance}
+              <img className='tokenIcon' src={TokenPhone} alt='iphone token icon' /> PHONE
+            </p>
+          </div>
+          <div className='token_balance'>
+            <p>
+              {iPhoneBal}
+              <img className='tokenIcon' src={TokenIphone} alt='iphone token icon' /> IPHONE
+            </p>
+          </div>
+        </div>
+      ) : (
+        ''
+      )}
+
       <Circle top='60%' left='80%' size='80px' type='warning' />
       <Square top='50px' left='20px' size='140px' type='info' blur />
       <Dots />
@@ -94,13 +136,13 @@ function PhoneLayout() {
           <img className='phone_size p_abs' src={layout.layout} alt='iphone case' />
           <div className='content_box phone_size'>
             <iframe
-              className={`style_iframe ${walletAddress ? 'open_a' : ''}`}
+              className={`style_iframe ${shortAddress ? 'open_a' : ''}`}
               src='/home'
               title='home'
               id='iframe-layout-phone'
               allowtransparency='true'
             />
-            {walletAddress ? (
+            {shortAddress ? (
               <></>
             ) : (
               <div className='lock'>
@@ -108,7 +150,7 @@ function PhoneLayout() {
               </div>
             )}
           </div>
-          {!walletAddress ? (
+          {!shortAddress ? (
             <img
               className='phone_notch'
               src={layout.layout}
