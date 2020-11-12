@@ -3,12 +3,15 @@ import { withdrawToken } from 'store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Modal, InputNumber, Slider } from 'antd';
 
-export default function WithdrawModal({ listTokenStake, poolSelected, marks, loading }) {
+export default function WithdrawModal({ listTokenStake, poolSelected, marks, loading, getSymbol }) {
   const dispatch = useDispatch();
 
   let [modalWithdraw, setModalWithdraw] = useState(false);
   let [amountWithdraw, setAmountWithdraw] = useState(0.1);
   const loadingWithdraw = useSelector((state) => state.loadingWithdraw);
+
+  const chainId = useSelector((state) => state.chainId);
+  const pools = useSelector((state) => state.pools);
 
   const handleWithdraw = (e) => {
     if (amountWithdraw <= 0) {
@@ -102,7 +105,14 @@ export default function WithdrawModal({ listTokenStake, poolSelected, marks, loa
           </div>
         </div>
         <div className='w_100 text_left'>
-          <p>Balance : {listTokenStake[poolSelected]} IPHONE</p>
+          {pools[poolSelected] ? (
+            <p>
+              Balance : {listTokenStake[poolSelected]}{' '}
+              {getSymbol(chainId, pools[poolSelected]?.lpToken)}
+            </p>
+          ) : (
+            <p>Balance : 0</p>
+          )}
         </div>
       </Modal>
     </div>

@@ -10,7 +10,7 @@ export default function Pool({ apy, token, phoneStake, pendingIPhone }) {
           <p className='ip'>IPHONE</p>
         </div>
 
-        <p className='gray'>Profit</p>
+        <p className='gray'>Profit {token === 'PHONE' ? ' x 100' : ''}</p>
       </div>
       <div className='pool_apy'>
         <div className='apy' />
