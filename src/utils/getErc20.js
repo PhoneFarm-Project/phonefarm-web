@@ -4,7 +4,7 @@ const tokenInfo = {
     '0xb25E362cc62BCB50566736Cb4e41A01434a9021d': {
       symbol: 'PHONE',
     },
-    '0x6b175474e89094c44da98b954eedeac495271d0f': {
+    '0x6B175474E89094C44Da98b954EedeAC495271d0F': {
       symbol: 'DAI',
     },
     '0x514910771af9ca656af840dff83e8264ecf986ca': {
