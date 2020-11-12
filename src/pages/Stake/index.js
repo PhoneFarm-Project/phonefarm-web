@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Layout, Tabs } from 'antd';
 import { getSymbol } from 'utils/getErc20';
+import { getIcon } from 'utils/getTokenStake';
 import Pool from 'components/Pool';
 import ButtonBack from 'components/ButtonBack';
 import DepositModal from 'components/DepositModal';
@@ -18,8 +19,6 @@ import {
 } from 'store/actions';
 
 import PhoneFarm from 'assets/images/logo.png';
-import PhoneIcon from 'assets/icons/phoneFarm-logo-128.png';
-import DaiIcon from 'assets/icons/dai.png';
 import './style.scss';
 
 const { TabPane } = Tabs;
@@ -94,29 +93,15 @@ function Stake() {
 
       <div className='phone_body flex_between'>
         {!!pools[poolSelected] ? (
-          symbol === 'PHONE' ? (
-            <div className='w50 flex'>
-              <div className='phoneicon'>
-                <img src={PhoneIcon} alt='icon phone' />
-              </div>
-              <div>
-                <p className='phone_font'>{symbol}</p>
-                <p className='phonefarm_font'>PhoneFarm</p>
-              </div>
+          <div className='w50 flex'>
+            <div className='phoneicon'>
+              <img src={getIcon(chainId, pools[poolSelected].lpToken)} alt='icon phone' />
             </div>
-          ) : symbol === 'DAI' ? (
-            <div className='w50 flex'>
-              <div className='phoneicon'>
-                <img src={DaiIcon} alt='icon phone' />
-              </div>
-              <div>
-                <p className='phone_font'>{symbol}</p>
-                <p className='phonefarm_font'>PhoneFarm</p>
-              </div>
+            <div>
+              <p className='phone_font'>{symbol}</p>
+              <p className='phonefarm_font'>PhoneFarm</p>
             </div>
-          ) : (
-            <></>
-          )
+          </div>
         ) : (
           <></>
         )}

@@ -32,7 +32,7 @@ export async function getAPY(chainId, pools, poolSelected, tokenLocked) {
     totalAllocPoint;
   let apy = valueIPhoneEarn / valueLocked;
   if (!isFinite(apy)) {
-    apy = 'Not available';
+    apy = 'Pending';
   }
   return apy;
 }

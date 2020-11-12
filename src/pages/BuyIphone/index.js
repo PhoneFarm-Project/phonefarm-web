@@ -137,7 +137,7 @@ export default function BuyIphone() {
             {!loading && allDevices.length <= 0 ? (
               <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description='No device'
+                description='Comming soon!'
                 className='stye-empty-box'
               />
             ) : null}
