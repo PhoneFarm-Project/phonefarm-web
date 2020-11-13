@@ -99,7 +99,7 @@ function PhoneLayout() {
           </div>
           <div className='token_balance'>
             <p>
-              {iPhoneBal}
+              {parseInt(iPhoneBal)}
               <img className='tokenIcon' src={TokenIphone} alt='iphone token icon' /> IPHONE
             </p>
           </div>

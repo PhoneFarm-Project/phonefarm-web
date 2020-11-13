@@ -136,7 +136,7 @@ function LandingPage() {
             <div className='col-12 col-md-6'>
               <div className='icons row justify-content-center'>
                 <div className='col-1 icon'>
-                  <a href='https://t.me/phonefarmfinance'>
+                  <a href='https://t.me/phonefarm_official'>
                     <img src={telegram} alt='' width='36px' />
                   </a>
                 </div>
