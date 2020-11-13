@@ -154,7 +154,7 @@ export const setIPhoneBal = () => async (dispatch, getState) => {
       IPhoneToken.abi,
       contractAddress.iPhoneTokenAddress
     );
-    let iPhoneBal = await iPhoneInstance.methods.balanceOf(walletAddress).call();
+    let iPhoneBal = parseBalance(await iPhoneInstance.methods.balanceOf(walletAddress).call(), 18);
     dispatch({ type: SET_IPHONE_BAL, iPhoneBal });
   } catch (e) {
     console.error(e);
@@ -188,9 +188,23 @@ export const setLoading = (loading) => async (dispatch) => {
   dispatch({ type: SET_LOADING_APPROVE, loading });
 };
 
-export const approveToken = (tokenAddress) => async (dispatch, getState) => {
+export const SET_STAKE_APPROVE = 'SET_STAKE_APPROVE';
+export const setLoadingStake = (index, loading) => async (dispatch, getState) => {
+  let { loadingStake } = getState();
+  loadingStake[index] = loading;
+  dispatch({ type: SET_STAKE_APPROVE, loadingStake });
+};
+
+export const SET_LOADING_WITHDRAW = 'SET_LOADING_WITHDRAW';
+export const setLoadingWithdraw = (index, loading) => async (dispatch, getState) => {
+  let { loadingWithdraw } = getState();
+  loadingWithdraw[index] = loading;
+  dispatch({ type: SET_LOADING_WITHDRAW, loadingWithdraw });
+};
+
+export const approveToken = (poolSelected, tokenAddress) => async (dispatch, getState) => {
   let state = getState();
-  dispatch(setLoading(true));
+  dispatch(setLoadingStake(poolSelected, true));
   const walletAddress = state.walletAddress;
   const web3 = state.web3;
   const weiValue = web3.utils.toWei('1000000000', 'ether');
@@ -200,9 +214,9 @@ export const approveToken = (tokenAddress) => async (dispatch, getState) => {
       .approve(contractAddress.factoryAddress, weiValue)
       .send({ from: walletAddress });
     dispatch(setTokenAllowance());
-    dispatch(setLoading(false));
+    dispatch(setLoadingStake(poolSelected, false));
   } catch (e) {
-    dispatch(setLoading(false));
+    dispatch(setLoadingStake(poolSelected, false));
     console.error(e);
   }
 };
@@ -258,16 +272,16 @@ export const depositToken = (pid, amount) => async (dispatch, getState) => {
 
 export const withdrawToken = (pid, amount) => async (dispatch, getState) => {
   let { walletAddress, factoryInstance, web3 } = getState();
-  dispatch(setLoading(true));
+  dispatch(setLoadingWithdraw(pid, true));
   const weiValue = web3.utils.toWei(amount.toString(), 'ether');
   try {
     await factoryInstance.methods.withdraw(pid, weiValue).send({ from: walletAddress });
     dispatch(setTokenAllowance());
     dispatch(setTokenStake());
-    dispatch(setLoading(false));
+    dispatch(setLoadingWithdraw(pid, false));
     dispatch(setPendingIPhone());
   } catch (e) {
-    dispatch(setLoading(false));
+    dispatch(setLoadingWithdraw(pid, false));
     console.error(e);
     return e;
   }

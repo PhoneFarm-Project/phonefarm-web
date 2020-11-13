@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { withdrawToken } from 'store/actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button, Modal, InputNumber, Slider } from 'antd';
 
 export default function WithdrawModal({ listTokenStake, poolSelected, marks, loading }) {
@@ -8,6 +8,7 @@ export default function WithdrawModal({ listTokenStake, poolSelected, marks, loa
 
   let [modalWithdraw, setModalWithdraw] = useState(false);
   let [amountWithdraw, setAmountWithdraw] = useState(0.1);
+  const loadingWithdraw = useSelector((state) => state.loadingWithdraw);
 
   const handleWithdraw = (e) => {
     if (amountWithdraw <= 0) {
@@ -69,7 +70,7 @@ export default function WithdrawModal({ listTokenStake, poolSelected, marks, loa
               type='primary'
               shape='round'
               onClick={() => handleWithdraw()}
-              loading={loading}
+              loading={loadingWithdraw[poolSelected]}
             >
               Withdraw
             </Button>
