@@ -12,6 +12,7 @@ import TokenPhone from 'assets/icons/phoneFarm-logo-128.png';
 import './style.scss';
 import './styleLayoutPhone.scss';
 import { setPhoneBalance, setIPhoneBal } from 'store/actions';
+import { parseBalance } from 'utils/helper';
 
 function PhoneLayout() {
   const dispatch = useDispatch();
@@ -99,7 +100,7 @@ function PhoneLayout() {
           </div>
           <div className='token_balance'>
             <p>
-              {iPhoneBal}
+              {parseBalance(iPhoneBal, 18)}
               <img className='tokenIcon' src={TokenIphone} alt='iphone token icon' /> IPHONE
             </p>
           </div>

@@ -154,7 +154,7 @@ export const setIPhoneBal = () => async (dispatch, getState) => {
       IPhoneToken.abi,
       contractAddress.iPhoneTokenAddress
     );
-    let iPhoneBal = parseBalance(await iPhoneInstance.methods.balanceOf(walletAddress).call(), 18);
+    let iPhoneBal = await iPhoneInstance.methods.balanceOf(walletAddress).call();
     dispatch({ type: SET_IPHONE_BAL, iPhoneBal });
   } catch (e) {
     console.error(e);
