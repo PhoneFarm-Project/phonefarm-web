@@ -66,7 +66,7 @@ export default function BuyIphone() {
   };
 
   const handleBuyDevice = (id, price) => {
-    if (parseInt(iPhoneBal) < parseInt(price)) {
+    if (parseInt(iPhoneBal) * 1e18 < parseInt(price)) {
       alert('insufficient IPHONE token');
     } else {
       dispatch(buyDevice(id));
