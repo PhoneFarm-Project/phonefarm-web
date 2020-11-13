@@ -16,6 +16,8 @@ const initialState = {
   iPhoneBal: 0,
   tokenAllowance: [],
   loading: false,
+  loadingStake: [],
+  loadingWithdraw: [],
   iPhoneAllowance: 0,
   ownedDevices: [],
   allDevices: [],
@@ -101,6 +103,16 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: action.loading,
+      };
+    case actions.SET_STAKE_APPROVE:
+      return {
+        ...state,
+        loadingStake: action.loadingStake,
+      };
+    case actions.SET_LOADING_WITHDRAW:
+      return {
+        ...state,
+        loadingWithdraw: action.loadingWithdraw,
       };
     case actions.SET_IPHONE_ALLOWANCE:
       return {

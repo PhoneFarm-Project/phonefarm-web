@@ -15,6 +15,7 @@ export default function DepositModal({
   let [modalDeposit, setModalDeposit] = useState(false);
   let [amountDeposit, setAmountDeposit] = useState(0.1);
 
+  const loadingStake = useSelector((state) => state.loadingStake);
   const tokenBal = useSelector((state) => state.tokenBal);
   const pools = useSelector((state) => state.pools);
   const chainId = useSelector((state) => state.chainId);
@@ -46,9 +47,9 @@ export default function DepositModal({
     }
   }
 
-  const handleApprove = (e) => {
+  const handleApprove = () => {
     let tokenAddress = pools[poolSelected].lpToken;
-    dispatch(approveToken(tokenAddress));
+    dispatch(approveToken(poolSelected, tokenAddress));
   };
 
   function depositChange(value) {
@@ -85,7 +86,7 @@ export default function DepositModal({
             shape='round'
             disabled={!statusDeposit}
             onClick={() => handleApprove()}
-            loading={tokenAllowance[poolSelected] === 0 && loading}
+            loading={tokenAllowance[poolSelected] === 0 && !!loadingStake[poolSelected]}
           >
             Approve
           </Button>,
@@ -94,7 +95,7 @@ export default function DepositModal({
             type='primary'
             shape='round'
             disabled={statusDeposit}
-            loading={tokenAllowance[poolSelected] > 0 && loading}
+            loading={tokenAllowance[poolSelected] > 0 && !!loadingStake[poolSelected]}
             onClick={() => handleDeposit()}
           >
             Deposit

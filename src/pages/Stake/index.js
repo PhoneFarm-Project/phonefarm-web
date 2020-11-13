@@ -40,7 +40,6 @@ function Stake() {
   const pendingIPhone = useSelector((state) => state.pendingIPhone);
   const tokenAllowance = useSelector((state) => state.tokenAllowance);
   const listTokenStake = useSelector((state) => state.listTokenStake);
-  const loading = useSelector((state) => state.loading);
   const pools = useSelector((state) => state.pools);
   const tokenLocked = useSelector((state) => state.tokenLocked);
   const chainId = useSelector((state) => state.chainId);
@@ -132,7 +131,6 @@ function Stake() {
               statusDeposit={statusDeposit}
               poolSelected={poolSelected}
               marks={marks}
-              loading={loading}
               getSymbol={getSymbol}
               tokenAllowance={tokenAllowance}
             />
@@ -142,7 +140,6 @@ function Stake() {
               listTokenStake={listTokenStake}
               poolSelected={poolSelected}
               marks={marks}
-              loading={loading}
             />
           </div>
         </div>
