@@ -141,7 +141,7 @@ function LandingPage() {
                   </a>
                 </div>
                 <div className='col-1 icon'>
-                  <a href='https://discord.gg/tEkbHq'>
+                  <a href='https://discord.com/invite/aBApkPx'>
                     <img src={discord} alt='' width='36px' />
                   </a>
                 </div>
@@ -151,7 +151,7 @@ function LandingPage() {
                   </a>
                 </div>
                 <div className='col-1 icon'>
-                  <a href='https://medium.com/@phonefarm.finance'>
+                  <a href='https://phonefarm-finance.medium.com'>
                     <img src={medium} alt='' width='36px' />
                   </a>
                 </div>

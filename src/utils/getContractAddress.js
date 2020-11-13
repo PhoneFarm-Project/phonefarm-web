@@ -1,12 +1,12 @@
 const contractAddress = {
   // Mainnet
   1: {
-    factoryAddress: '0x66E2F017b8C4539642960B493a8f5019dBB3d103',
+    factoryAddress: '0x9a73910F2318fb4A77f48c3cB99eae51F0f3209a',
     saleAddress: '0x763995F6C680FBac2870524CbE17c235F2049418',
-    iPhoneTokenAddress: '0xE7d8Cc0d3B1C16D67B0AE9f5614132D34CF42B21',
-    storeAddress: '0xE69Da532bcE239349117acB87B50E1eFfa7Fd744',
+    iPhoneTokenAddress: '0x77fde3242eaA67E7ee21bEf8247d9909dbA06ee4',
+    storeAddress: '0xD506A7d0E3d259E1A20c2A6299Bb24e0dF8622f3',
     devicesAddress: '0x16Cb6125928D7908c620d732e16b0D1ab4C5Ab96',
-    phoneTokenAddress: '0x4951470230571Ed5d01b9364b1F671E7bB151a2f',
+    phoneTokenAddress: '0xb25E362cc62BCB50566736Cb4e41A01434a9021d',
   },
   // Ropsten network
   3: {

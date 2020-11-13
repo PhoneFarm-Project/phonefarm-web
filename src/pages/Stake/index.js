@@ -140,6 +140,7 @@ function Stake() {
               listTokenStake={listTokenStake}
               poolSelected={poolSelected}
               marks={marks}
+              getSymbol={getSymbol}
             />
           </div>
         </div>
