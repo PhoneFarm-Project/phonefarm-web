@@ -119,6 +119,7 @@ function Stake() {
                 pendingIPhone={pendingIPhone[i]}
                 token={getSymbol(chainId, e.lpToken)}
                 apy={apy}
+                poolSelected={poolSelected}
               />
             </TabPane>
           );
