@@ -8,6 +8,7 @@ import { connectMetaMask } from 'utils/connectMetaMask';
 import getIphoneLayout from 'utils/getIphoneLayout';
 import TokenIphone from 'assets/icons/Iphone-token-128.png';
 import TokenPhone from 'assets/icons/phoneFarm-logo-128.png';
+import useInterval from 'utils/useInterval';
 
 import './style.scss';
 import './styleLayoutPhone.scss';
@@ -22,6 +23,11 @@ function PhoneLayout() {
   const chainId = useSelector((state) => state.chainId);
   const iPhoneBal = useSelector((state) => state.iPhoneBal);
   const phoneBalance = useSelector((state) => state.phoneBalance);
+
+  useInterval(() => {
+    dispatch(setPhoneBalance());
+    dispatch(setIPhoneBal());
+  }, 5000);
 
   useEffect(() => {
     if (!layoutStorage) {
